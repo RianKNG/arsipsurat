@@ -1,0 +1,100 @@
+@extends('layouts.master')
+@section('content')
+<div class="main">
+    <div class="main-content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">EditDataSurat</h3>
+                        </div>
+                        <div class="panel-body">
+                            <form action="/surat/{{ $surat->id }}/updatesurat" method="POST">
+                                @csrf
+                                <div class="mb-3">
+                                  <label for="exampleInputEmail1" class="form-label">noSurat</label>
+                                  <input type="integer" name="no_surat" value="{{ $surat->no_surat }}"class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                </div>
+                                <select class="form-select form-select-lg mb-3" name="status_surat" aria-label=".form-select-lg example">
+                                    <option selected>statusSurat</option>
+                                    <option value="M" @if($surat->status_surat == "M") selected @endif>Masuk</option>
+                                    <option value="K" @if($surat->status_surat == "K") selected @endif>Keluar</option>
+                                  </select>
+                                  <div class="mb-3">
+                                    <label for="exampleInputEmail1" class="form-label">Pengirim</label>
+                                    <input type="text" name="pengirim" value="{{ $surat->pengirim }}"class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                  </div>
+                                  <div class="mb-3">
+                                    <label for="exampleInputEmail1" class="form-label">Tanggal</label>
+                                    <input type="date" name="tanggal" value="{{ $surat-> tanggal}}"class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                  </div>
+                                  <div class="form-floating">
+                                    <textarea class="form-control" name="keterangan" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px" >{{ $surat->keterangan}}</textarea>
+                                    <label for="floatingTextarea2">Keterangan</label>
+                                  </div> 
+                        </div>
+                        <div>
+                        <a href="/surat">Kembali</a>
+                        <button type="submit" class="btn btn-primary">Update</button>
+                    </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+@stop
+@section('content1')
+         
+         <h1>EditDataSurat</h1>
+          @if (session('sukses'))
+          <div class="alert alert-success" role="alert">
+            {{ session('sukses') }}
+          </div>
+          @endif
+        
+          <div class="rows">
+              <div class="col-12">
+              
+                  <form action="/surat/{{ $surat->id }}/updatesurat" method="POST">
+                    @csrf
+                    <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label">noSurat</label>
+                      <input type="integer" name="no_surat" value="{{ $surat->no_surat }}"class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    </div>
+                    <select class="form-select form-select-lg mb-3" name="status_surat" aria-label=".form-select-lg example">
+                        <option selected>statusSurat</option>
+                        <option value="M" @if($surat->status_surat == "M") selected @endif>Masuk</option>
+                        <option value="K" @if($surat->status_surat == "K") selected @endif>Keluar</option>
+                      </select>
+                      <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Pengirim</label>
+                        <input type="text" name="pengirim" value="{{ $surat->pengirim }}"class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                      </div>
+                      <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Tanggal</label>
+                        <input type="date" name="tanggal" value="{{ $surat-> tanggal}}"class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                      </div>
+                      <div class="form-floating">
+                        <textarea class="form-control" name="keterangan" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px" >{{ $surat->keterangan}}</textarea>
+                        <label for="floatingTextarea2">Keterangan</label>
+                      </div> 
+            </div>
+            <div>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Update</button>
+        </form>
+              </div>
+          </div>
+      </div>
+     
+@endsection
