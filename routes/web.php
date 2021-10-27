@@ -19,11 +19,14 @@ use App\Http\Controllers\AuthController;
 Route::get('/', function () {
     return view('home');
 });
-Route::post('/postlogin',[AuthController::class,'postlogin']);
-Route::get('/login',[AuthController::class,'login']);
-Route::get('/dashboard',[DashboardController::class,'index']);
+
 Route::get('/surat',[SuratController::class,'index']);
 Route::post('/surat/tambahsurat',[SuratController::class,'create']);
 Route::get('/surat/{id}/editsurat',[SuratController::class,'edit']);
 Route::post('/surat/{id}/updatesurat',[SuratController::class,'update']);
 Route::get('/surat/{id}/hapussurat',[SuratController::class,'delete']);
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+

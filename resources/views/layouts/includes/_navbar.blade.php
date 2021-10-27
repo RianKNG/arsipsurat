@@ -44,7 +44,11 @@
 								<li><a href="#"><i class="lnr lnr-user"></i> <span>My Profile</span></a></li>
 								<li><a href="#"><i class="lnr lnr-envelope"></i> <span>Message</span></a></li>
 								<li><a href="#"><i class="lnr lnr-cog"></i> <span>Settings</span></a></li>
-								<li><a href="#"><i class="lnr lnr-exit"></i> <span>Logout</span></a></li>
+								<form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+									@csrf
+									<li><button type="submit"><i class="lnr lnr-exit"></i> <span>Logout</span></button></li>
+								</form>
+								{{-- <li><a href="#"><i class="lnr lnr-exit"></i> <span>Logout</span></a></li> --}}
 							</ul>
 						</li>
 						<!-- <li>
