@@ -12,7 +12,7 @@ class SuratController extends Controller
         if($request->has('cari')){
             $surat=SuratModel::where('no_surat','LIKE','%'.$request->cari.'%')->get();
         }else{
-            $surat=SuratModel::all();
+            $surat=SuratModel::paginate(5);
         }
         
         return view ('surat.index',['surat'=>$surat]);
