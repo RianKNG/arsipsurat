@@ -1,6 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
+<!-- MAIN -->
 <div class="main">
     <!-- MAIN CONTENT -->
     <div class="main-content">
@@ -11,9 +12,9 @@
                     <div class="profile-left">
                         <!-- PROFILE HEADER -->
                         <div class="profile-header">
-                            <div class=""></div>
-                            <div class="">
-                                <img src="{{ asset('images/'.$surat->foto) }}" class="" width="200px" height="200px" alt="Foto">
+                            <div class="overlay"></div>
+                            <div class="profile-main">
+                                <img src="{{ asset('images/'.$surat->foto) }}" class=""  width="300" height="300" alt="foto">
                                 <h3 class="name">{{ $surat->foto }}</h3>
                                 {{-- <span class="online-status status-available">Available</span> --}}
                             </div>
@@ -37,58 +38,48 @@
                             <div class="profile-info">
                                 <h4 class="heading">Basic Info</h4>
                                 <ul class="list-unstyled list-justify">
-                                    <li>Birthdate <span>{{ $surat->no_surat }}</span></li>
-                                    <li>Mobile <span>{{ $surat->keterangan }}</span></li>
-                                    <li>Email <span>{{ $surat->pengirim }}</span></li>
-                                   
-                                   <a href="{{ asset('images/'.$surat->foto) }}"class="btn-sm"  download="">pdf</a>
+                                    <li>Birthdate <span>24 Aug, 2016</span></li>
+                                    <li>Mobile <span>(124) 823409234</span></li>
+                                    <li>Email <span>samuel@mydomain.com</span></li>
+                                    <li>Website <span><a href="https://www.themeineed.com">www.themeineed.com</a></span></li>
                                 </ul>
                             </div>
-                           
-                            <div class="text-center"><a href="/surat/{{ $surat->id }}/editsurat" class="btn btn-primary">Edit Profile</a></div>
+                            <div class="text-center"><a href="#" class="btn btn-primary">Edit Profile</a></div>
                         </div>
                         <!-- END PROFILE DETAIL -->
                     </div>
                     <!-- END LEFT COLUMN -->
                     <!-- RIGHT COLUMN -->
                     <div class="profile-right">
-                  
+                       
                         <!-- TABBED CONTENT -->
-                        <div class="profile-stat">
-                            <div class="row">
+                        <div class="custom-tabs-line tabs-line-bottom left-aligned">
                             <ul class="nav" role="tablist">
-                               
-                                {{-- <li class="active"><a href="#tab-bottom-left1" role="tab" data-toggle="tab">Recent Activity</a></li>
-                                <li><a href="#tab-bottom-left2" role="tab" data-toggle="tab">Projects <span class="badge">7</span></a></li> --}}
+                                <li class="active"><a href="#tab-bottom-left1" role="tab" data-toggle="tab">Recent Activity</a></li>
+                                <li><a href="#tab-bottom-left2" role="tab" data-toggle="tab">Projects <span class="badge">7</span></a></li>
                             </ul>
-                            <div>
                         </div>
                         <div class="tab-content">
                             <div class="tab-pane fade in active" id="tab-bottom-left1">
                                 <ul class="list-unstyled activity-timeline">
-                                    <table class="table table-striped">
-										<thead>
-											<tr>
-												
-												<th>First Name</th>
-												<th>Last Name</th>
-												<th>Username</th>
-                                                <th>Download</th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												
-												<td>{{ $surat->no_surat }}</td>
-												<td>{{ $surat->keterangan }}</td>
-												<td>{{ $surat->pengirim }}</td>
-                                                <td><a href="{{ asset('images/'.$surat->foto) }}"class="btn-sm"  download="">pdf</a></td>
-											</tr>
-											
-										</tbody>
-									</table>
+                                    <li>
+                                        <i class="fa fa-comment activity-icon"></i>
+                                        <p>Commented on post <a href="#">Prototyping</a> <span class="timestamp">2 minutes ago</span></p>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-cloud-upload activity-icon"></i>
+                                        <p>Uploaded new file <a href="#">Proposal.docx</a> to project <a href="#">New Year Campaign</a> <span class="timestamp">7 hours ago</span></p>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-plus activity-icon"></i>
+                                        <p>Added <a href="#">Martin</a> and <a href="#">3 others colleagues</a> to project repository <span class="timestamp">Yesterday</span></p>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-check activity-icon"></i>
+                                        <p>Finished 80% of all <a href="#">assigned tasks</a> <span class="timestamp">1 day ago</span></p>
+                                    </li>
                                 </ul>
-                                {{-- <div class="margin-top-30 text-center"><a href="#" class="btn btn-default">See all activity</a></div> --}}
+                                <div class="margin-top-30 text-center"><a href="#" class="btn btn-default">See all activity</a></div>
                             </div>
                             <div class="tab-pane fade" id="tab-bottom-left2">
                                 <div class="table-responsive">
@@ -189,4 +180,5 @@
     <!-- END MAIN CONTENT -->
 </div>
 <!-- END MAIN -->
+<div class="clearfix"></div>
 @endsection
