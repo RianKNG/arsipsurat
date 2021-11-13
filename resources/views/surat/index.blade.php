@@ -9,7 +9,7 @@
                         <div class="panel-heading">
                             <h3 class="panel-title">Tabel Surat</h3>
                             <div class="right">
-										<button type="button" class="btn" data-toggle="modal" data-target="#exampleModal"><i class="lnr-plus-circle">TambahSurat</i></button>
+										<button type="button" class="btn" data-toggle="modal" data-target="#exampleModal"><i class="btn btn-primary btn-sm">TambahSurat</i></button>
                             </div>
                         </div>
                        <!-- Button trigger modal -->
@@ -56,7 +56,7 @@
                                             
                                     </div>
                                     <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
                                     <button type="submit" class="btn btn-primary">Submit</button>
                                 </form>
                                     </div>

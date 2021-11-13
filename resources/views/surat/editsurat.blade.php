@@ -39,8 +39,8 @@
                                   </div> 
                         </div>
                         <div>
-                        <a href="/surat">Kembali</a>
-                        <button type="submit" class="btn btn-primary">Update</button>
+                        <a href="/surat" class="btn btn-warning btn-sm">Kembali</a>
+                        <button type="submit" class="btn btn-primary btn-sm">Update</button>
                     </form>
                         </div>
                     </div>
