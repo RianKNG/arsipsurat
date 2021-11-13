@@ -33,8 +33,8 @@ class SuratController extends Controller
         // dd($request->all());
         $surat=SuratModel::find($id);
         $surat->update($request->all());
-        if($request->hasfile('foto','pdf')){
-            $request->file('foto','pdf')->move('images',$request->file('foto','pdf')->getClientOriginalName());
+        if($request->hasfile('foto')){
+            $request->file('foto','pdf')->move('images',$request->file('foto')->getClientOriginalName());
             $surat->foto = $request->file('foto')->getClientOriginalName();
           
             $surat->save();

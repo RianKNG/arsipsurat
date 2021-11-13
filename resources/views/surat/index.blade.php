@@ -53,10 +53,7 @@
                                                 <label for="exampleInputEmail1" class="form-label">Foto</label>
                                                 <input type="file" name="foto"class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                                             </div>
-                                            <div class="mb-3">
-                                                <label for="exampleInputEmail1" class="form-label">Foto</label>
-                                                <input type="file" name="pdf"class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                                            </div>
+                                            
                                     </div>
                                     <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -87,6 +84,7 @@
                                         <td>{{ $srt->pengirim }}</td>
                                         <td>{{ $srt->tanggal }}</td>
                                         <td>{{ $srt->keterangan }}</td>
+                                        {{-- <td>{{ $srt->foto }}</td> --}}
                                         <td>
                                             <a href="/surat/{{ $srt->id }}/editsurat" class="btn btn-warning btn-sm">Edit</a>
                                             <a href="/surat/{{ $srt->id }}/hapussurat" class="btn btn-danger btn-sm">Hapus</a>

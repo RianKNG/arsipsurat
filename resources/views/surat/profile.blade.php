@@ -11,11 +11,11 @@
                     <div class="profile-left">
                         <!-- PROFILE HEADER -->
                         <div class="profile-header">
-                            <div class="overlay"></div>
-                            <div class="profile">
-                                <img src="{{ url('images/'.$surat->foto) }}" class="img-thumbnail" width="600px" height="800px" alt="Foto">
+                            <div class=""></div>
+                            <div class="">
+                                <img src="{{ asset('images/'.$surat->foto) }}" class="" width="200px" height="200px" alt="Foto">
                                 <h3 class="name">{{ $surat->foto }}</h3>
-                                <span class="online-status status-available">Available</span>
+                                {{-- <span class="online-status status-available">Available</span> --}}
                             </div>
                             <div class="profile-stat">
                                 <div class="row">
