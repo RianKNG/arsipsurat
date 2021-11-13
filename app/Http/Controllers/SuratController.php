@@ -20,6 +20,7 @@ class SuratController extends Controller
     public function create(Request $request)
     {
         SuratModel::create($request->all());
+        
         return redirect('/surat')->with('sukses','Data Berhasil Ditambahkan');
     }
     public function edit($id)
@@ -29,8 +30,16 @@ class SuratController extends Controller
     }
     public function update(Request $request,$id)
     {
+        // dd($request->all());
         $surat=SuratModel::find($id);
         $surat->update($request->all());
+        if($request->hasfile('foto','pdf')){
+            $request->file('foto','pdf')->move('images',$request->file('foto','pdf')->getClientOriginalName());
+            $surat->foto = $request->file('foto')->getClientOriginalName();
+          
+            $surat->save();
+        }
+
         return redirect ('/surat')->with('sukses','Data Berhasil Diubah');
     }
     public function delete($id)
@@ -39,4 +48,17 @@ class SuratController extends Controller
         $surat->delete('surat');
         return redirect ('/surat')->with('sukses','Data Berhasil Dihapus');
     }
+    public function dashboard()
+        {
+            return view('dashboard');
+        }
+    public function profile($id)
+    {
+        $surat=SuratModel::find($id);
+        return view('surat.profile',['surat'=>$surat]);
+        
+        
+    }
+       
+    
 }

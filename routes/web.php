@@ -1,9 +1,10 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\SuratController;
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +26,8 @@ Route::post('/surat/tambahsurat',[SuratController::class,'create']);
 Route::get('/surat/{id}/editsurat',[SuratController::class,'edit']);
 Route::post('/surat/{id}/updatesurat',[SuratController::class,'update']);
 Route::get('/surat/{id}/hapussurat',[SuratController::class,'delete']);
+Route::get('/surat/{id}/profile',[SuratController::class,'profile']);
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

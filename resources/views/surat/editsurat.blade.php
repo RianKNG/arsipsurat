@@ -10,7 +10,7 @@
                             <h3 class="panel-title">EditDataSurat</h3>
                         </div>
                         <div class="panel-body">
-                            <form action="/surat/{{ $surat->id }}/updatesurat" method="POST">
+                            <form action="/surat/{{ $surat->id }}/updatesurat" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="mb-3">
                                   <label for="exampleInputEmail1" class="form-label">noSurat</label>
@@ -32,6 +32,10 @@
                                   <div class="form-floating">
                                     <textarea class="form-control" name="keterangan" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px" >{{ $surat->keterangan}}</textarea>
                                     <label for="floatingTextarea2">Keterangan</label>
+                                  </div>
+                                  <div class="mb-3">
+                                    <label for="exampleInputEmail1" class="form-label">foto</label>
+                                    <input type="file" name="foto" value="{{ $surat->foto }}"class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                                   </div> 
                         </div>
                         <div>

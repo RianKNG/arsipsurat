@@ -49,6 +49,14 @@
                                                 <textarea class="form-control" name="keterangan" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
                                                 <label for="floatingTextarea2">Keterangan</label>
                                             </div> 
+                                            <div class="mb-3">
+                                                <label for="exampleInputEmail1" class="form-label">Foto</label>
+                                                <input type="file" name="foto"class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="exampleInputEmail1" class="form-label">Foto</label>
+                                                <input type="file" name="pdf"class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                            </div>
                                     </div>
                                     <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -73,7 +81,8 @@
                                 <tbody>
                                     @foreach ($surat as $srt)
                                     <tr>
-                                        <td>{{ $srt->no_surat }}</td>
+                                        
+                                        <td><a href="/surat/{{ $srt->id }}/profile">{{ $srt->no_surat }}</a></td>
                                         <td>{{ $srt->status_surat }}</td>
                                         <td>{{ $srt->pengirim }}</td>
                                         <td>{{ $srt->tanggal }}</td>
@@ -86,6 +95,7 @@
                                     @endforeach
                                 </tbody>
                             </table>
+                            {{ $surat->links() }}
                         </div>
                     </div>
                     <!-- END TABLE HOVER -->
@@ -102,51 +112,6 @@
 @stop
 @section('content1')
 
-          @if (session('sukses'))
-          <div class="alert alert-success" role="alert">
-            {{ session('sukses') }}
-          </div>
-          @endif
-        
-          <div class="rows">
-              <div class=col-6>
-                <h1>Data Surat</h1>
-              </div>
-              <div class=col-6>
-                  <!-- Button trigger modal -->
-                <button type="button" class="btn btn-primary float-right" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    Tambah
-                </button>
-              </div>
-            
-            <table class="table table-hover">
-                <tr>
-                    <th>NoSurat</th>
-                    <th>StatusSurat</th>
-                    <th>Pengirim</th>
-                    <th>Tanggal</th>
-                    <th>Keterangan</th>
-                    <th>Aksi</th>
-                </tr>
-                @foreach ($surat as $srt)
-                <tr>
-                    <td>{{ $srt->no_surat }}</td>
-                    <td>{{ $srt->status_surat }}</td>
-                    <td>{{ $srt->pengirim }}</td>
-                    <td>{{ $srt->tanggal }}</td>
-                    <td>{{ $srt->keterangan }}</td>
-                    <td>
-                        <a href="/surat/{{ $srt->id }}/editsurat" class="btn btn-warning btn-sm">Edit</a>
-                        <a href="/surat/{{ $srt->id }}/hapussurat" class="btn btn-danger btn-sm">Hapus</a>
-                    </td>
-                    
-                    
-                </tr>  
-                @endforeach
-            </table>
-          </div>
-      </div>
-      <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -178,6 +143,10 @@
                                     <textarea class="form-control" name="keterangan" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
                                     <label for="floatingTextarea2">Keterangan</label>
                                 </div> 
+                                <div class="mb-3">
+                                    <label for="exampleInputEmail1" class="form-label">Pengirim</label>
+                                    <input type="file" name="foto"class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                </div>
                         </div>
                         <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
