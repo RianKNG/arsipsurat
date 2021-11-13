@@ -4,6 +4,7 @@
             <ul class="nav">
                 <li><a href="#" class="active"><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
                 <li><a href="/surat" class=""><i class="lnr lnr-envelope"></i> <span>Surat</span></a></li>
+                <li><a href="/exportpdf" onclick ="alert('yakin ingin donload')" class=""><i class="lnr lnr-download"></i> <span>Exportpdf</span></a></li>  
             </ul>
         </nav>
     </div>

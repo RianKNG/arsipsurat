@@ -67,6 +67,7 @@
                             <table class="table table-hover">
                                 <thead>
                                     <tr>
+                                        <th>No</th>
                                         <th>NoSurat</th>
                                         <th>StatusSurat</th>
                                         <th>Pengirim</th>
@@ -75,10 +76,15 @@
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
+                                @php
+                                $no=1;
+                                    
+                                @endphp
                                 <tbody>
-                                    @foreach ($surat as $srt)
+                                    @foreach ($surat as $index =>$srt)
                                     <tr>
-                                        
+                                        <td>{{ $index + $surat->firstItem()}}</td>
+                
                                         <td><a href="/surat/{{ $srt->id }}/profile">{{ $srt->no_surat }}</a></td>
                                         <td>{{ $srt->status_surat }}</td>
                                         <td>{{ $srt->pengirim }}</td>
@@ -95,6 +101,7 @@
                             </table>
                             {{ $surat->links() }}
                         </div>
+                        @include('sweetalert::alert')
                     </div>
                     <!-- END TABLE HOVER -->
                 </div>

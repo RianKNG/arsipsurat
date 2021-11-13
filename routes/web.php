@@ -27,6 +27,8 @@ Route::get('/surat/{id}/editsurat',[SuratController::class,'edit']);
 Route::post('/surat/{id}/updatesurat',[SuratController::class,'update']);
 Route::get('/surat/{id}/hapussurat',[SuratController::class,'delete']);
 Route::get('/surat/{id}/profile',[SuratController::class,'profile']);
+Route::get('/exportpdf',[SuratController::class,'exportpdf']);
+
 
 Auth::routes();
 
