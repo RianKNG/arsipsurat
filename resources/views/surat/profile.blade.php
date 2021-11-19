@@ -13,8 +13,8 @@
                         <!-- PROFILE HEADER -->
                         <div class="profile-header">
                             <div class="overlay"></div>
-                            <div class="profile-main">
-                                <img src="{{ asset('images/'.$surat->foto) }}" class=""  width="300" height="300" alt="foto">
+                            <div class="">
+                                <img src="{{ asset('images/'.$surat->foto) }}" class=""  width="330" height="330" alt="foto">
                                 <h3 class="name">{{ $surat->foto }}</h3>
                                 {{-- <span class="online-status status-available">Available</span> --}}
                             </div>
@@ -41,7 +41,7 @@
                                     <li>Birthdate <span>24 Aug, 2016</span></li>
                                     <li>Mobile <span>(124) 823409234</span></li>
                                     <li>Email <span>samuel@mydomain.com</span></li>
-                                    <li>Website <span><a href="https://www.themeineed.com">www.themeineed.com</a></span></li>
+                                   
                                 </ul>
                             </div>
                             <div class="text-center"><a href="#" class="btn btn-primary">Edit Profile</a></div>
@@ -59,28 +59,47 @@
                                 <li><a href="#tab-bottom-left2" role="tab" data-toggle="tab">Projects <span class="badge">7</span></a></li>
                             </ul>
                         </div>
-                        <div class="tab-content">
-                            <div class="tab-pane fade in active" id="tab-bottom-left1">
-                                <ul class="list-unstyled activity-timeline">
-                                    <li>
-                                        <i class="fa fa-comment activity-icon"></i>
-                                        <p>Commented on post <a href="#">Prototyping</a> <span class="timestamp">2 minutes ago</span></p>
-                                    </li>
-                                    <li>
-                                        <i class="fa fa-cloud-upload activity-icon"></i>
-                                        <p>Uploaded new file <a href="#">Proposal.docx</a> to project <a href="#">New Year Campaign</a> <span class="timestamp">7 hours ago</span></p>
-                                    </li>
-                                    <li>
-                                        <i class="fa fa-plus activity-icon"></i>
-                                        <p>Added <a href="#">Martin</a> and <a href="#">3 others colleagues</a> to project repository <span class="timestamp">Yesterday</span></p>
-                                    </li>
-                                    <li>
-                                        <i class="fa fa-check activity-icon"></i>
-                                        <p>Finished 80% of all <a href="#">assigned tasks</a> <span class="timestamp">1 day ago</span></p>
-                                    </li>
-                                </ul>
-                                <div class="margin-top-30 text-center"><a href="#" class="btn btn-default">See all activity</a></div>
-                            </div>
+                       <!-- BORDERED TABLE -->
+							<div class="panel">
+								<div class="panel-heading">
+									<h3 class="panel-title">Bordered Table</h3>
+								</div>
+								<div class="panel-body">
+									<table class="table table-bordered">
+										<thead>
+											<tr>
+												<th>No</th>
+												<th>Judul Surat</th>
+												<th>Total Lampiran</th>
+												<th>Pengirim</th>
+                                              
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>1</td>
+												<td>Steve</td>
+												<td>Jobs</td>
+												<td>@steve</td>
+											</tr>
+											<tr>
+												<td>2</td>
+												<td>Simon</td>
+												<td>Philips</td>
+												<td>@simon</td>
+											</tr>
+											<tr>
+												<td>3</td>
+												<td>Jane</td>
+												<td>Doe</td>
+												<td>@jane</td>
+											</tr>
+                                           
+										</tbody>
+									</table>
+								</div>
+							</div>
+							<!-- END BORDERED TABLE -->
                             <div class="tab-pane fade" id="tab-bottom-left2">
                                 <div class="table-responsive">
                                     <table class="table project-table">
