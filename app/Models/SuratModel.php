@@ -9,5 +9,11 @@ class SuratModel extends Model
 {
     use HasFactory;
     protected $table='surat';
-    protected $fillable=['no_surat','status_surat','pengirim','tanggal','keterangan','foto'];
+    protected $fillable=['id','no_surat','status_surat','ba_id','pengirim','tanggal','keterangan','foto'];
+   
+    public function ba()
+    {
+        return $this->belongsTo(Ba::class);
+    }
+
 }

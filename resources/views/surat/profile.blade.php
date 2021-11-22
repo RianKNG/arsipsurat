@@ -13,22 +13,24 @@
                         <!-- PROFILE HEADER -->
                         <div class="profile-header">
                             <div class="overlay"></div>
-                            <div class="profile-main">
-                                <img src="{{ asset('images/'.$surat->foto) }}" class=""  width="300" height="300" alt="foto">
+                            <div class="">
+                                <img src="{{ asset('images/'.$surat->foto) }}" class=""  width="280" height="280" alt="foto">
                                 <h3 class="name">{{ $surat->foto }}</h3>
                                 {{-- <span class="online-status status-available">Available</span> --}}
                             </div>
                             <div class="profile-stat">
                                 <div class="row">
-                                    <div class="col-md-4 stat-item">
-                                        45 <span>Projects</span>
+                                    <div class="col-md-12 stat-item">
+                                        
+                                        No_Surat <span>{{ $surat->no_surat}} </span>
+                                        Memiliki <span>{{ $surat->ba->lampiran}} lampiran</span>
                                     </div>
-                                    <div class="col-md-4 stat-item">
+                                    {{-- <div class="col-md-4 stat-item">
                                         15 <span>Awards</span>
                                     </div>
                                     <div class="col-md-4 stat-item">
                                         2174 <span>Points</span>
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </div>
                         </div>
@@ -36,12 +38,10 @@
                         <!-- PROFILE DETAIL -->
                         <div class="profile-detail">
                             <div class="profile-info">
-                                <h4 class="heading">Basic Info</h4>
+                                <h4 class="heading">StatusSurat</h4>
                                 <ul class="list-unstyled list-justify">
-                                    <li>Birthdate <span>24 Aug, 2016</span></li>
-                                    <li>Mobile <span>(124) 823409234</span></li>
-                                    <li>Email <span>samuel@mydomain.com</span></li>
-                                    <li>Website <span><a href="https://www.themeineed.com">www.themeineed.com</a></span></li>
+                                    <li>NoSurat<span>24 Aug, 2016</span></li>
+                                    <li>DonloadSurat<span>(124) 823409234</span></li>
                                 </ul>
                             </div>
                             <div class="text-center"><a href="#" class="btn btn-primary">Edit Profile</a></div>

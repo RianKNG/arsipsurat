@@ -35,6 +35,7 @@
     <th>No</th>
     <th>NoSurat</th>
     <th>StatusSurat</th>
+    <th>StatusSurat</th>
     <th>Pengirim</th>
     <th>Tanggal</th>
     <th>Keterangan</th>
@@ -47,6 +48,7 @@
     <td>{{ $no++ }}</td>                                 
     <td>{{ $srt->no_surat }}</td>
     <td>{{ $srt->status_surat }}</td>
+    <td>{{ $srt->ba->kode }}</td>
     <td>{{ $srt->pengirim }}</td>
     <td>{{ $srt->tanggal }}</td>
     <td>{{ $srt->keterangan }}</td>

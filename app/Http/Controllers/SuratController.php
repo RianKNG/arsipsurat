@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 // use Barryvdh\DomPDF\PDF;
 use App\Models\SuratModel;
+
+
+
 use Illuminate\Http\Request;
 use PDF;
 class SuratController extends Controller
@@ -13,10 +16,11 @@ class SuratController extends Controller
         if($request->has('cari')){
             $surat=SuratModel::where('no_surat','LIKE','%'.$request->cari.'%')->get();
         }else{
-            $surat=SuratModel::paginate(5);
+            $surat=SuratModel::paginate(8);
         }
+        $total=SuratModel::where('ba_id','1')->count();
         
-        return view ('surat.index',['surat'=>$surat]);
+        return view ('surat.index',compact('surat'));
     }
     public function create(Request $request)
     {
@@ -35,7 +39,7 @@ class SuratController extends Controller
         $surat=SuratModel::find($id);
         $surat->update($request->all());
         if($request->hasfile('foto')){
-            $request->file('foto','pdf')->move('images',$request->file('foto')->getClientOriginalName());
+            $request->file('foto')->move('images',$request->file('foto')->getClientOriginalName());
             $surat->foto = $request->file('foto')->getClientOriginalName();
           
             $surat->save();
@@ -68,6 +72,19 @@ class SuratController extends Controller
       $pdf = PDF::loadview('pdflaporan');
       return $pdf->download('data.pdf');
       
+    }
+    public function searchBydate(Request $req)
+    {
+        $surat=SuratModel::where ('tanggal','>=', $req->from)
+        ->where ('tanggal','<=', $req->to)
+        ->get();
+    
+
+    
+    
+
+        return view ('layanan',compact('surat'));
+        // dd($surat);
     }
        
     

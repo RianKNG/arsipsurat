@@ -1,8 +1,11 @@
 <?php
 
+use App\Http\Controllers\LayananController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BaController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SuratController;
 use App\Http\Controllers\DashboardController;
 
@@ -18,7 +21,7 @@ use App\Http\Controllers\DashboardController;
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('welcome');
 });
 
 Route::get('/surat',[SuratController::class,'index']);
@@ -28,6 +31,13 @@ Route::post('/surat/{id}/updatesurat',[SuratController::class,'update']);
 Route::get('/surat/{id}/hapussurat',[SuratController::class,'delete']);
 Route::get('/surat/{id}/profile',[SuratController::class,'profile']);
 Route::get('/exportpdf',[SuratController::class,'exportpdf']);
+Route::get('/ba',[BaController::class,'index']);
+Route::post('/surat',[SuratController::class,'searchBydate']);
+Route::get('/layanan',[LayananController::class,'index']);
+Route::post('/Layanan',[SuratController::class,'searchBydate']);
+Route::post('/ba/tambahba',[BaController::class,'create']);
+
+
 
 
 Auth::routes();
