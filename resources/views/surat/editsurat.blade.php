@@ -39,6 +39,7 @@
                                   </div> 
                         </div>
                         <div>
+                          <div class="modal-footer">
                         <a href="/surat" class="btn btn-warning btn-sm">Kembali</a>
                         <button type="submit" class="btn btn-primary btn-sm">Update</button>
                     </form>
