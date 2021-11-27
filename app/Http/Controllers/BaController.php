@@ -10,7 +10,7 @@ class BaController extends Controller
 {
     public function index()
     {
-       $ba = Ba::paginate(5);
+       $ba = Ba::paginate(2);
     //    $total1=Ba::where('lampiran','4')->count();
     //    $total2=Ba::where('lampiran','7')->count();
       return view ('ba.index',compact('ba'));

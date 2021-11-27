@@ -111,7 +111,7 @@
                                     @endforeach
                                 </tbody>
                             </table>
-                            {{-- {{ $ba->links() }} --}}
+                            {{ $ba->links() }}
                         </div>
                        
                         @include('sweetalert::alert')
