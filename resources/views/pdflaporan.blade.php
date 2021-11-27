@@ -15,7 +15,7 @@
 
 #customers tr:nth-child(even){background-color: #f2f2f2;}
 
-#customers tr:hover {background-color: #ddd;}
+#customers tr:hover {background-color: rgb(221, 221, 221);}
 
 #customers th {
   padding-top: 12px;
@@ -32,9 +32,9 @@
 
 <table id="customers">
   <tr>
-    <th>No</th>
+    <th width="6px">No</th>
     <th>NoSurat</th>
-    <th>StatusSurat</th>
+    <th width="12px">StatusSurat</th>
     <th>StatusSurat</th>
     <th>Pengirim</th>
     <th>Tanggal</th>

@@ -8,13 +8,14 @@
                     <div class="panel">
                         <div class="panel-heading">
                             <h3 class="panel-title">CariRentanTanggal</h3><br>
-                            <form action="/surat" method="POST">
+                            <form  class="navbar-form navbar-left" action="/surat" method="POST">
                                 @csrf
                                 <input type="date" class="btn btn-warning btn-sm"  name="from" value="{{ date('Y-m-d') }}" >&nbsp;
                                 <input type="date" class="btn btn-info btn-sm"name="to" value="{{ date('Y-m-d') }}" >&nbsp;
                                 <input type="submit" value="View" class="btn btn-success btn-sm">
-                                <a href="/dash" class = "btn btn-danger btn-xs">refresh</a>
+                                <a href="/layanan" class = "btn btn-danger btn-xs">refresh</a>
                             </form>
+                        
                             
                             {{-- <div class="right">
 										<button type="button" class="btn" data-toggle="modal" data-target="#exampleModal"><i class="btn btn-primary btn-sm">TambahSurat</i></button>

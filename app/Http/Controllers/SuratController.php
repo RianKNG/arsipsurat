@@ -20,7 +20,7 @@ class SuratController extends Controller
         // }
         $cari = $request->cari;
         $surat = SuratModel::where('no_surat','LIKE','%'.$request->cari.'%')
-        ->paginate(1);
+        ->paginate(2);
         // $surat = SuratModel::all();
         // // $total=SuratModel::where('ba_id','1')->count();
         

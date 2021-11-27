@@ -67,7 +67,7 @@
                                 <thead>
                                     <tr>
                                         
-                                        <th bgcolor='#EE6868' align='center'>kUnik</th>
+                                        <th bgcolor='#EE6868' align='center' width="6px">kUnik</th>
                                         <th>Kode</th>
                                         
                                       

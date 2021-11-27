@@ -20,15 +20,21 @@
 										<button type="button" class="btn" data-toggle="modal" data-target="#exampleModal"><i class="btn btn-primary btn-xs btn-xs fa fa-plus">Surat</i></button>
                             </div>
                         </div>
-                        <div>
-                            <nav class="navbar navbar-light bg-light ">
+                        
+                            {{-- <nav class="navbar navbar-light bg-light ">
                                 <form class="form-inline" method="GET" action="/surat" enctype="multipart/form-data">
                                   <input type="text" name="cari" value="{{ $cari }}">
-                                  <button type="submit"><i class="btn btn-success btn-xs btn-xs fa fa-search">Cari</i></button>
+                                  <button type="submit" ><i class="btn btn-success btn-xs btn-xs fa fa-search">Cari</i></button>
                                   
                                 </form>
-                              </nav>
-                        </div>
+                              </nav> --}}
+                        <form class="navbar-form navbar-left" method="GET" action="/surat" enctype="multipart/form-data">
+                            <div class="input-group">
+                                <input type="text" name="cari" value="{{ $cari }}" class="form-control" placeholder="Search dashboard...">
+                                <span class="input-group-btn"><button type="submit" class="btn btn-primary">Go</button></span>
+                            </div>
+                        </form>
+                        
                         {{-- Akumulasi Total Penutupan: {{ $total }} --}}
                        <!-- Button trigger modal -->
                         
@@ -45,8 +51,7 @@
                                     </div>
                                     <div class="modal-body">
                                         <form action="/surat/tambahsurat" method=post>
-                                            @csrf
-                                          
+                                            @csrf                                         
                                               <div class="mb-3">
                                             <label for="exampleInputEmail1" class="form-label">noSurat</label>
                                             <input type="integer" name="no_surat" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
