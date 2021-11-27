@@ -38,7 +38,7 @@
                                         {{-- <th>Lampiran</th> --}}
                                         <th>Pengirim</th>
                                         <th>Tanggal</th>
-                                        <th>Keterangan</th>
+                                       
                                        
                                     </tr>
                                 </thead>
@@ -56,7 +56,7 @@
                                         <td>{{ $srt->status_surat }}</td>
                                         {{-- <td>{{ $srt->ba->id}}</td> --}}
                                         {{-- <td>{{ $srt->ba->kode}}</td> --}}
-                                        <td>{{ $srt->ba->kode }}</td>
+                                        {{-- <td>{{ $srt->ba->lampiran }}</td> --}}
                                         <td>{{ $srt->pengirim }}</td>
                                         <td>{{ $srt->tanggal }}</td>
                                         <td>{{ $srt->keterangan }}</td>

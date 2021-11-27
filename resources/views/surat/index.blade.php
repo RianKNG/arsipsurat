@@ -21,10 +21,11 @@
                             </div>
                         </div>
                         <div>
-                            <nav class="navbar navbar-light bg-light">
+                            <nav class="navbar navbar-light bg-light ">
                                 <form class="form-inline" method="GET" action="/surat" enctype="multipart/form-data">
                                   <input type="text" name="cari" value="{{ $cari }}">
-                                  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Cari</button>
+                                  <button type="submit"><i class="btn btn-success btn-xs btn-xs fa fa-search">Cari</i></button>
+                                  
                                 </form>
                               </nav>
                         </div>
@@ -116,7 +117,7 @@
                                     @foreach ($surat as $index =>$srt)
                                     <tr>
                                         {{-- <td>{{ $index + $surat->firstItem()}}</td> --}}
-                       <td>{{ $srt->id }}</td>
+                                        <td>{{ $srt->id }}</td>
                                         <td><a href="/surat/{{ $srt->id }}/profile">{{ $srt->no_surat }}</a></td>
                                  
                                         <td>{{ $srt->status_surat }}</td>
