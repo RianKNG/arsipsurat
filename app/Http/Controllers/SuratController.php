@@ -13,18 +13,28 @@ class SuratController extends Controller
 {
     public function index(Request $request)
     {
-        if($request->has('cari')){
-            $surat=SuratModel::where('no_surat','LIKE','%'.$request->cari.'%')->get();
-        }else{
-            $surat=SuratModel::paginate(8);
-        }
-        $total=SuratModel::where('ba_id','1')->count();
+        // if($request->has('cari')){
+        //     $surat=SuratModel::where('no_surat','LIKE','%'.$request->cari.'%')->get();
+        // }else{
+        //     $surat=SuratModel::paginate(2);
+        // }
+        $cari = $request->cari;
+        $surat = SuratModel::where('no_surat','LIKE','%'.$request->cari.'%')
+        ->paginate(1);
+        // $surat = SuratModel::all();
+        // // $total=SuratModel::where('ba_id','1')->count();
         
-        return view ('surat.index',compact('surat'));
+        return view ('surat.index',compact('surat','cari'));
     }
     public function create(Request $request)
     {
-        SuratModel::create($request->all());
+       $surat= SuratModel::create($request->all());
+        if($request->hasfile('foto')){
+            $request->file('foto')->move('images',$request->file('foto')->getClientOriginalName());
+            $surat->foto = $request->file('foto')->getClientOriginalName();
+          
+            $surat->save();
+        }
         
         return redirect('/surat')->with('success', 'Data Berhasil Tersimpan!');
     }

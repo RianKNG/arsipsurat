@@ -44,9 +44,9 @@
       $no=1;
   @endphp
 @foreach ($data as $srt)
-<tr>  
+<tr >  
     <td>{{ $no++ }}</td>                                 
-    <td>{{ $srt->no_surat }}</td>
+    <td id="customers">{{ $srt->no_surat }}</td>
     <td>{{ $srt->status_surat }}</td>
     <td>{{ $srt->ba->kode }}</td>
     <td>{{ $srt->pengirim }}</td>

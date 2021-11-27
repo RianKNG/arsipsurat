@@ -13,12 +13,12 @@
                                 <input type="date" class="btn btn-warning btn-sm"  name="from" value="{{ date('Y-m-d') }}" >&nbsp;
                                 <input type="date" class="btn btn-info btn-sm"name="to" value="{{ date('Y-m-d') }}" >&nbsp;
                                 <input type="submit" value="View" class="btn btn-success btn-sm">
-                                <a href="/" class = "btn btn-danger btn-sm">refresh</a>
+                                <a href="/dash" class = "btn btn-danger btn-xs">refresh</a>
                             </form>
                             
-                            <div class="right">
+                            {{-- <div class="right">
 										<button type="button" class="btn" data-toggle="modal" data-target="#exampleModal"><i class="btn btn-primary btn-sm">TambahSurat</i></button>
-                            </div>
+                            </div> --}}
                         </div>
                         {{-- Akumulasi Total Penutupan: {{ $total }} --}}
                        <!-- Button trigger modal -->

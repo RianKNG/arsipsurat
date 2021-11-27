@@ -13,7 +13,7 @@ class Ba extends Model
     
     public function surat()
     {
-        return $this->hasMany(SuratModel::class);
+        return $this->hasOne(SuratModel::class);
     }
 
 }

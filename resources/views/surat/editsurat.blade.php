@@ -21,10 +21,12 @@
                                     <option value="M" @if($surat->status_surat == "M") selected @endif>Masuk</option>
                                     <option value="K" @if($surat->status_surat == "K") selected @endif>Keluar</option>
                                   </select>
-                                  <div class="mb-3">
-                                    <label for="exampleInputEmail1" class="form-label">Pengirim</label>
-                                    <input type="text" name="pengirim" value="{{ $surat->pengirim }}"class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                                  </div>
+                                  <select class="form-select form-select-lg mb-3" name="pengirim" aria-label=".form-select-lg example">
+                                    <option selected>Cabang</option>
+                                    <option value="T" @if($surat->pengirim == "T") selected @endif>Tomo</option>
+                                    <option value="P" @if($surat->pengirim == "P") selected @endif>Paseh</option>
+                                    <option value="C" @if($surat->pengirim == "C") selected @endif>Cimanggung</option>
+                                  </select>
                                   <div class="mb-3">
                                     <label for="exampleInputEmail1" class="form-label">Tanggal</label>
                                     <input type="date" name="tanggal" value="{{ $surat-> tanggal}}"class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">

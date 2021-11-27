@@ -15,7 +15,7 @@
                             <div class="overlay"></div>
                             <div class="">
 
-                                <h3 class="name">{{ $surat->foto }}</h3>
+                                <img src="{{ asset('images/'.$surat->foto) }}" alt="" width="285px" height="600px">
                                 {{-- <span class="online-status status-available">Available</span> --}}
                             </div>
                             <div class="profile-stat">
@@ -43,7 +43,7 @@
 
                                 </ul>
                             </div>
-                            <div class="text-center"><a href="#" class="btn btn-primary">Edit Profile</a></div>
+                            <div class="text-center"><a href="/surat/{{ $surat->id }}/editsurat" class="btn btn-primary">Edit Profile</a></div>
                         </div>
                         <!-- END PROFILE DETAIL -->
                     </div>

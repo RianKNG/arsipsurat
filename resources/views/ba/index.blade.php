@@ -9,7 +9,7 @@
                         <div class="panel-heading">
                             <h3 class="panel-title">Tabel Surat</h3>
                             <div class="right">
-										<button type="button" class="btn" data-toggle="modal" data-target="#exampleModal"><i class="btn btn-primary btn-sm">TambahSurat</i></button>
+										<button type="button" class="btn" data-toggle="modal" data-target="#exampleModal"><i class="btn btn-primary btn-sm fa fa-plus">Lampiran</i></button>
                             </div>
                             
                                
@@ -31,24 +31,25 @@
                                         <form action="/ba/tambahba" method="POST" enctype="multipart/form-data">
                                             @csrf
                                           
-                                              {{-- <div class="mb-3">
-                                            <label for="exampleInputEmail1" class="form-label">Id</label>
+                                              <div class="mb-3">
+                                            <label for="exampleInputEmail1" class="form-label">kUnik</label>
                                             <input type="integer" name="id" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                                            </div> --}}
+                                            </div>
                                          
                                             <div class="mb-3">
                                                 <label for="exampleInputEmail1" class="form-label">Kode</label>
                                                 <input type="integer" name="kode" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                                                 </div>
+                                                <div class="mb-3">
+                                                    <label for="exampleInputEmail1" class="form-label">Lampiran</label>
+                                                    <input type="text" name="lampiran" class="form-control" >
+                                                    </div>
                                             
                                                 <div class="mb-3">
                                                     <label for="exampleInputEmail1" class="form-label">pdf</label>
                                                     <input type="file" name="pdf"class="form-control"  aria-describedby="emailHelp">
                                                 </div>
-                                                    <div class="mb-3">
-                                                        <label for="exampleInputEmail1" class="form-label">Lampiran</label>
-                                                        <input type="text" name="lampiran" class="form-control" >
-                                                        </div>
+                                                    
                                           
                                          
                                             
@@ -66,14 +67,14 @@
                                 <thead>
                                     <tr>
                                         
-                                        <th>Id</th>
+                                        <th bgcolor='#EE6868' align='center'>kUnik</th>
                                         <th>Kode</th>
                                         
-                                        <th>Jenis</th>
+                                      
                                         <th>Lampiran</th>
                                         <th>Pdf</th>
                                       
-                                        <th>Aksi</th>
+                                        {{-- <th>Aksi</th> --}}
                                     </tr>
                                 </thead>
                                 @php
@@ -91,7 +92,7 @@
                                         
                                         <td>{{ $baa->kode }}</td>
                                         
-                                        <td>{{ $baa->jenis}}</td>
+                                      
                                         {{-- <td>{{ $baa->surat}}</td> --}}
                                         <td>{{ $baa->lampiran }}</td>
                                         <td>{{ $baa->pdf }}<a href="{{ asset('images/'.$baa->pdf) }}" alt=""><i class="fa fa-download"></i></a></td>
@@ -110,7 +111,7 @@
                                     @endforeach
                                 </tbody>
                             </table>
-                            {{ $ba->links() }}
+                            {{-- {{ $ba->links() }} --}}
                         </div>
                        
                         @include('sweetalert::alert')
