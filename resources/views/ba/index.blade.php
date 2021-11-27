@@ -41,6 +41,10 @@
                                                 <input type="integer" name="kode" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                                                 </div>
                                                 <div class="mb-3">
+                                                    <label for="exampleInputEmail1" class="form-label">Jenis</label>
+                                                    <input type="text" name="jenis" class="form-control" >
+                                                    </div>
+                                                <div class="mb-3">
                                                     <label for="exampleInputEmail1" class="form-label">Lampiran</label>
                                                     <input type="text" name="lampiran" class="form-control" >
                                                     </div>
@@ -70,7 +74,7 @@
                                         <th bgcolor='#EE6868' align='center' width="6px">kUnik</th>
                                         <th>Kode</th>
                                         
-                                      
+                                      <th>Jenis</th>
                                         <th>Lampiran</th>
                                         <th>Pdf</th>
                                       
@@ -94,6 +98,7 @@
                                         
                                       
                                         {{-- <td>{{ $baa->surat}}</td> --}}
+                                        <td>{{ $baa->jenis }}</td>
                                         <td>{{ $baa->lampiran }}</td>
                                         <td>{{ $baa->pdf }}<a href="{{ asset('images/'.$baa->pdf) }}" alt=""><i class="fa fa-download"></i></a></td>
                                         <td>
@@ -111,7 +116,7 @@
                                     @endforeach
                                 </tbody>
                             </table>
-                            {{-- {{ $ba->links() }} --}}
+                            {{ $ba->links() }}
                         </div>
                        
                         @include('sweetalert::alert')

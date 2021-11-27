@@ -22,9 +22,9 @@ class SuratController extends Controller
         $surat = SuratModel::where('no_surat','LIKE','%'.$request->cari.'%')
         ->paginate(2);
         // $surat = SuratModel::all();
-        // // $total=SuratModel::where('ba_id','1')->count();
+        $total=SuratModel::where('ba_id','1')->count();
         
-        return view ('surat.index',compact('surat','cari'));
+        return view ('surat.index',compact('surat','cari','total'));
     }
     public function create(Request $request)
     {

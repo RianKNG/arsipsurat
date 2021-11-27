@@ -28,6 +28,7 @@
                             <!-- Modal -->
 
                         <div class="panel-body">
+                         
                             <table class="table table-hover">
                                 <thead>
                                     <tr>
