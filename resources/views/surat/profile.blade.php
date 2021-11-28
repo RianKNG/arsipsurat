@@ -23,7 +23,7 @@
                                     <div class="col-md-12 stat-item">
                                         
                                         No_Surat <span>{{ $surat->no_surat}} </span>
-                                        Memiliki <span>{{ $surat->ba->lampiran}} lampiran</span>
+                                        {{-- Memiliki <span>{{ $surat->ba->lampiran}} lampiran</span> --}}
                                     </div>
                                     {{-- <div class="col-md-4 stat-item">
                                         15 <span>Awards</span>

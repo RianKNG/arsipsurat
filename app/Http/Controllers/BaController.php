@@ -30,4 +30,10 @@ class BaController extends Controller
         
         return redirect('/ba')->with('success', 'Data Berhasil Tersimpan!');
     }
+    public function delete($id)
+    {
+        $ba=Ba::find($id);
+        $ba->delete('ba');
+        return redirect ('/ba')->with('success', 'Data Berhasil Dihapus!');
+    }
 }

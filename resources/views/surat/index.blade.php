@@ -28,6 +28,16 @@
                                   
                                 </form>
                               </nav> --}}
+                              <div class="navbar-form navbar-up">
+                                <i class="btn-sm btn-success">Akumulasi Total Penutupan  : {{ $total }}</i>
+                                <i class="btn-sm btn-warning">Akumulasi Total Penutupan  : {{ $total }}</i>
+                                <i class="btn-sm btn-danger">Akumulasi Total Penutupan  : {{ $total }}</i>
+                                <i class="btn-sm btn-info">Akumulasi Total Penutupan  : {{ $total }}</i>
+                            
+                            
+                            </div>
+                           
+                            
                         <form class="navbar-form navbar-left" method="GET" action="/surat" enctype="multipart/form-data">
                             <div class="input-group">
                                 <input type="text" name="cari" value="{{ $cari }}" class="form-control" placeholder="Search dashboard...">
@@ -35,7 +45,7 @@
                             </div>
                         </form>
                         
-                        {{-- Akumulasi Total Penutupan: {{ $total }} --}}
+                        
                        <!-- Button trigger modal -->
                         
   
@@ -51,7 +61,7 @@
                                     </div>
                                     <div class="modal-body">
                                         <form action="/surat/tambahsurat" method=post>
-                                            @csrf                                         
+                                            @csrf
                                               <div class="mb-3">
                                             <label for="exampleInputEmail1" class="form-label">noSurat</label>
                                             <input type="integer" name="no_surat" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
@@ -62,14 +72,14 @@
                                                 <option value="Masuk">Masuk</option>
                                                 <option value="Keluar">Keluar</option>
                                             </select>
-                                                <div class="mb-3">
-                                                    <label for="exampleInputEmail1" class="form-label">ba_id</label>
-                                                    <input type="integer" name="ba_id" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                                                    </div>
+                                            {{-- <div class="mb-3">
+                                                <label for="exampleInputEmail1" class="form-label">Pengirim</label>
+                                                <input type="text" name="pengirim" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                                </div> --}}
                                           
                                            
                                                     <select class="form-select form-select-lg mb-3" name="pengirim" aria-label=".form-select-lg example">
-                                                        <option selected>Cabang</option>
+                                                        <option selected>PengirimCab</option>
                                                         <option value="Tomo">Tomo</option>
                                                         <option value="Paseh">Paseh</option>
                                                         <option value="Cimanggung">Cimanggung</option>
@@ -105,12 +115,13 @@
                                         <th>Id</th>
                                         <th >NoSurat</th>
                                         <th>StatusSurat</th>
-                                        <th>ba_id</th>
-                                       
+                                        {{-- <th>ba_id</th>
+                                        --}}
                                         <th>Pengirim</th>
-                                         <th>Lampiran</th>
+                                         {{-- <th>Lampiran</th> --}}
                                         <th>Tanggal</th>
                                         <th>Keterangan</th>
+                                        <th>test</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
@@ -128,11 +139,13 @@
                                         <td>{{ $srt->status_surat }}</td>
                                         {{-- <td>{{ $srt->ba->id}}</td> --}}
                                         {{-- <td>{{ $srt->ba->kode}}</td> --}}
-                                        <td>{{ $srt->ba_id }}</td>
+                                        {{-- <td>{{ $srt->ba_id }}</td> --}}
                                         <td>{{ $srt->pengirim }}</td>
-                                        <td>{{ $srt->ba->lampiran }}</td>
+                                        {{-- <td>{{ $srt->ba->lampiran }}</td> --}}
                                         <td>{{ $srt->tanggal }}</td>
                                         <td>{{ $srt->keterangan }}</td>
+                                        <td>{{ $srt->test() }}</td>
+
                                         {{-- <td>{{ $srt->foto }}</td> --}}
                                         <td>
                                             <a href="/surat/{{ $srt->id }}/editsurat" class="btn-warning btn-xs fa fa-edit"></a>

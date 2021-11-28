@@ -13,18 +13,19 @@ class SuratController extends Controller
 {
     public function index(Request $request)
     {
-        // if($request->has('cari')){
-        //     $surat=SuratModel::where('no_surat','LIKE','%'.$request->cari.'%')->get();
-        // }else{
-        //     $surat=SuratModel::paginate(2);
-        // }
+        if($request->has('cari')){
+            $surat=SuratModel::where('no_surat','LIKE','%'.$request->cari.'%')->get();
+        }else{
+            $surat=SuratModel::paginate(2);
+        }
         $cari = $request->cari;
         $surat = SuratModel::where('no_surat','LIKE','%'.$request->cari.'%')
         ->paginate(2);
         // $surat = SuratModel::all();
-        // // $total=SuratModel::where('ba_id','1')->count();
+        $total=SuratModel::where('pengirim','T')
+        ->count();
         
-        return view ('surat.index',compact('surat','cari'));
+        return view ('surat.index',compact('surat','cari','total'));
     }
     public function create(Request $request)
     {

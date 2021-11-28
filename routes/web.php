@@ -35,6 +35,7 @@ Route::get('/surat/{id}/hapussurat',[SuratController::class,'delete']);
 Route::get('/surat/{id}/profile',[SuratController::class,'profile']);
 Route::get('/exportpdf',[SuratController::class,'exportpdf']);
 Route::get('/ba',[BaController::class,'index']);
+Route::get('/ba/{id}/hapusba',[BaController::class,'delete']);
 Route::post('/surat',[SuratController::class,'searchBydate']);
 Route::get('/layanan',[LayananController::class,'index']);
 Route::post('/Layanan',[SuratController::class,'searchBydate']);
