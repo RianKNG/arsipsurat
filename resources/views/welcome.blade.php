@@ -2,6 +2,7 @@
 @section('content')
 
 <!-- MAIN -->
+
 <div class="main">
     <!-- MAIN CONTENT -->
     <div class="main-content">
@@ -18,7 +19,7 @@
                             <div class="metric">
                                 <span class="icon"><i class="fa fa-download"></i></span>
                                 <p>
-                                    <span class="number">1,252</span>
+                                    <span class="number">{{ $total }}</span>
                                     <span class="title">Downloads</span>
                                 </p>
                             </div>

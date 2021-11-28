@@ -1,12 +1,13 @@
 <?php
 
-use App\Http\Controllers\LayananController;
+use App\Models\SuratModel;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BaController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SuratController;
+use App\Http\Controllers\LayananController;
 use App\Http\Controllers\DashboardController;
 
 /*
@@ -24,7 +25,8 @@ Route::get('/', function () {
     return view('home');
 });
 Route::get('/dash', function () {
-    return view('welcome');
+    $total=SuratModel::where('pengirim','T')->count();
+    return view('welcome',compact('total'));
 });
 
 Route::get('/surat',[SuratController::class,'index']);
