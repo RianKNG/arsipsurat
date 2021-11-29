@@ -9,11 +9,14 @@ class Ba extends Model
 {
     use HasFactory;
     protected $table='ba';
-    protected $fillable=['kode','jenis','lampiran','pdf'];
+    protected $fillable=['id','surat_id','kode','jenis','lampiran','pdf'];
     
     public function surat()
     {
-        return $this->hasMany(SuratModel::class);
+        // return $this->hasMany(SuratModel::class);
+        return $this->belongsTo(SuratModel::class);
+        
     }
+  
 
 }

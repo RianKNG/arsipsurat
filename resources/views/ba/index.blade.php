@@ -31,19 +31,19 @@
                                         <form action="/ba/tambahba" method="POST" enctype="multipart/form-data">
                                             @csrf
                                           
-                                              <div class="mb-3">
+                                              {{-- <div class="mb-3">
                                             <label for="exampleInputEmail1" class="form-label">kUnik</label>
                                             <input type="integer" name="id" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                                            </div>
+                                            </div> --}}
+                                            <div class="mb-3">
+                                                <label for="exampleInputEmail1" class="form-label">SuratId</label>
+                                                <input type="integer" name="surat_id" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                                </div>
                                          
                                             <div class="mb-3">
                                                 <label for="exampleInputEmail1" class="form-label">Kode</label>
                                                 <input type="integer" name="kode" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                                                 </div>
-                                                <div class="mb-3">
-                                                    <label for="exampleInputEmail1" class="form-label">Jenis</label>
-                                                    <input type="text" name="jenis" class="form-control" >
-                                                    </div>
                                                 <div class="mb-3">
                                                     <label for="exampleInputEmail1" class="form-label">Lampiran</label>
                                                     <input type="text" name="lampiran" class="form-control" >
@@ -71,14 +71,13 @@
                                 <thead>
                                     <tr>
                                         
-                                        <th bgcolor='#EE6868' align='center' width="6px">kUnik</th>
+                                        {{-- <th>Id</th> --}}
+                                        <th  bgcolor='#EE6868' align='center' width="6px">SuratId</th>
                                         <th>Kode</th>
-                                        
-                                      <th>Jenis</th>
+                                        <th>Pengirim</th>
                                         <th>Lampiran</th>
                                         <th>Pdf</th>
-                                      
-                                        {{-- <th>Aksi</th> --}}
+                                        <th>Aksi</th>
                                     </tr>
                                 </thead>
                                 @php
@@ -92,13 +91,14 @@
                                         {{-- <td>{{ $index + $baa>firstItem()}}</td> --}}
                 
                                         {{-- <td><a href="/surat/{{ $baa->id }}/profile">{{ $baa->no_surat }}</a></td> --}}
-                                        <td>{{ $baa->id }}</td>
-                                        
+                                        {{-- <td>{{ $baa->id }}</td> --}}
+                                        <td>{{ $baa->surat_id }}</td>
                                         <td>{{ $baa->kode }}</td>
                                         
                                       
-                                        {{-- <td>{{ $baa->surat}}</td> --}}
-                                        <td>{{ $baa->jenis }}</td>
+                                        
+                                      
+                                        {{-- <td>{{ $baa->surat->pengirim}}</td> --}}
                                         <td>{{ $baa->lampiran }}</td>
                                         <td>{{ $baa->pdf }}<a href="{{ asset('images/'.$baa->pdf) }}" alt=""><i class="fa fa-download"></i></a></td>
                                         <td>
@@ -107,11 +107,9 @@
 {{--                                       
                                         <td><img src="{{ asset('images/'.$baa->pdf) }}" alt="">
                                         </td> --}}
-                                        {{-- <td>
-                                            
-                                            <a href="#" class="btn btn-warning btn-sm fa fa-edit"></a>
-                                            <a href="#" class="btn btn-danger btn-sm fa fa-trash"></a>
-                                        </td> --}}
+                                        <td>
+                                            <a href="/ba/{{ $baa->id }}/hapusba" class="btn btn-danger btn-sm fa fa-trash"></a>
+                                        </td>
                                     </tr>  
                                     @endforeach
                                 </tbody>
