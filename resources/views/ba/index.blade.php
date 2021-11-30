@@ -98,7 +98,7 @@
                                       
                                         
                                       
-                                        <td>{{ $baa->surat->pengirim}}</td>
+                                        {{-- <td>{{ $baa->surat->pengirim}}</td> --}}
                                         <td>{{ $baa->lampiran }}</td>
                                         <td>{{ $baa->pdf }}<a href="{{ asset('images/'.$baa->pdf) }}" alt=""><i class="fa fa-download"></i></a></td>
                                         <td>

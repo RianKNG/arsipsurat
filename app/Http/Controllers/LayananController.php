@@ -25,6 +25,7 @@ class LayananController extends Controller
     {
         $surat=SuratModel::where ('tanggal','>=', $req->from)
         ->where ('tanggal','<=', $req->to)
+        ->andWhere('status_surat', 'masuk')
         ->paginate(2);
 
         // $view = $request->view;
