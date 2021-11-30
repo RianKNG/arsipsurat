@@ -2,7 +2,8 @@
     <div class="sidebar-scroll">
         <nav>
             <ul class="nav">
-                <li><a href="/dash" class=""><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
+                {{-- <li><a href="/dash" class=""><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li> --}}
+                <li><a href="/grafik" class=""><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
                 <li><a href="/surat" class=""><i class="lnr lnr-envelope"></i> <span>Surat</span></a></li>
                 <li><a href="/ba" class=""><i class="lnr lnr-book"></i> <span>LampSurat</span></a></li>
                

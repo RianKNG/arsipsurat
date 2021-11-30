@@ -8,7 +8,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SuratController;
 use App\Http\Controllers\LayananController;
-use App\Http\Controllers\DashboardController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -24,10 +24,16 @@ use App\Http\Controllers\DashboardController;
 Route::get('/', function () {
     return view('home');
 });
-Route::get('/dash', function () {
+Route::get('/grafik', function () {
     $total=SuratModel::where('pengirim','T')->count();
-    return view('welcome',compact('total'));
+    $total1=SuratModel::where('keterangan','S')->count();
+    return view('grafik',compact('total','total1'));
+    
 });
+// Route::get('/dash', function () {
+//     $total=SuratModel::where('pengirim','T')->count();
+//     return view('welcome');
+// });
 
 Route::get('/surat',[SuratController::class,'index']);
 Route::post('/surat/tambahsurat',[SuratController::class,'create']);
@@ -48,6 +54,6 @@ Route::post('/ba/tambahba',[BaController::class,'create']);
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 

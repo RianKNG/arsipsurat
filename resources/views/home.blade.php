@@ -74,7 +74,7 @@
 						<div class="overlay"></div>
 						<div class="content text">
 							<h1 class="heading">Free Bootstrap dashboard template</h1>
-							<p>by The Develovers</p>
+							<p>by The Coba</p>
 						</div>
 					</div>
 					<div class="clearfix"></div>

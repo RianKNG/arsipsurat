@@ -28,14 +28,7 @@
                                   
                                 </form>
                               </nav> --}}
-                              <div class="navbar-form navbar-up">
-                                <i class="btn-sm btn-success">Akumulasi Total Penutupan  : {{ $total }}</i>
-                                <i class="btn-sm btn-warning">Akumulasi Total Penutupan  : {{ $total }}</i>
-                                <i class="btn-sm btn-danger">Akumulasi Total Penutupan  : {{ $total }}</i>
-                                <i class="btn-sm btn-info">Akumulasi Total Penutupan  : {{ $total }}</i>
-                            
-                            
-                            </div>
+                             
                            
                             
                         <form class="navbar-form navbar-left" method="GET" action="/surat" enctype="multipart/form-data">
