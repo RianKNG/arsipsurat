@@ -27,7 +27,8 @@ Route::get('/', function () {
 Route::get('/grafik', function () {
     $total=SuratModel::where('pengirim','T')->count();
     $total1=SuratModel::where('keterangan','S')->count();
-    return view('grafik',compact('total','total1'));
+    $total2=SuratModel::count();
+    return view('grafik',compact('total','total1','total2'));
     
 });
 // Route::get('/dash', function () {

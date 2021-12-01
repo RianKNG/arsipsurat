@@ -13,11 +13,11 @@ class SuratController extends Controller
 {
     public function index(Request $request)
     {
-        if($request->has('cari')){
-            $surat=SuratModel::where('no_surat','LIKE','%'.$request->cari.'%')->get();
-        }else{
-            $surat=SuratModel::paginate(2);
-        }
+        // if($request->has('cari')){
+        //     $surat=SuratModel::where('no_surat','LIKE','%'.$request->cari.'%')->get();
+        // }else{
+        //     $surat=SuratModel::paginate(2);
+        // }
         $cari = $request->cari;
         $surat = SuratModel::where('no_surat','LIKE','%'.$request->cari.'%')
         ->paginate(2);
@@ -91,11 +91,6 @@ class SuratController extends Controller
         $surat=SuratModel::where ('tanggal','>=', $req->from)
         ->where ('tanggal','<=', $req->to)
         ->get();
-    
-
-    
-    
-
         return view ('layanan',compact('surat'));
         // dd($surat);
     }

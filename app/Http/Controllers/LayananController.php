@@ -10,7 +10,7 @@ class LayananController extends Controller
     public function index(Request $request)
     {
      
-            $surat=SuratModel::paginate(2);
+            $surat=SuratModel::all();
         
         // $total=SuratModel::where('ba_id','1')->count();
         
@@ -21,17 +21,16 @@ class LayananController extends Controller
         
         return view ('layanan',compact('surat'));
     }
-    public function searchBydate(Request $req)
+    public function searchBydate(Request $request)
     {
-        $surat=SuratModel::where ('tanggal','>=', $req->from)
-        ->where ('tanggal','<=', $req->to)
-        ->andWhere('status_surat', 'masuk')
-        ->paginate(2);
+        // $surat=SuratModel::where ('tanggal','>=', $req->from)
+        // ->where ('tanggal','<=', $req->to)
+        // ->get();;
 
-        // $view = $request->view;
-        // $surat=SuratModel::where ('tanggal','>=', $request->from)
-        // ->where ('tanggal','<=', $request->to)
-        // ->paginate(2);
+        $cari = $request->cari;
+        $surat=SuratModel::where ('tanggal','>=', $request->from)
+        ->where ('tanggal','<=', $request->to)
+        ->paginate(2);
     
 
         // $cari = $request->cari;
@@ -39,7 +38,7 @@ class LayananController extends Controller
         // ->paginate(1);
     
 
-        return view ('layanan',compact('surat'));
+        return view ('layanan',compact('surat','cari'));
         // dd($surat);
     }
        

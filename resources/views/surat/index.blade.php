@@ -12,10 +12,10 @@
                                 @csrf
                                 <input type="date" name="from" value="{{ date('Y-m-d') }}" >&nbsp;
                                 <input type="date" name="to" value="{{ date('Y-m-d') }}" >&nbsp;
-                                <input type="submit" value="View">
+                                <input type="submit" value="cari">
                                 <a href="/surat">refresh</a>
                             </form> --}}
-                            <h3 class="panel-title">Tabel Surat</h3>
+                            <h3 class="panel-title"><b  font-weight: bold;>TabelSurat</b></h3>
                             <div class="right">
 										<button type="button" class="btn" data-toggle="modal" data-target="#exampleModal"><i class="btn btn-primary btn-xs btn-xs fa fa-plus">Surat</i></button>
                             </div>
@@ -33,8 +33,8 @@
                             
                         <form class="navbar-form navbar-left" method="GET" action="/surat" enctype="multipart/form-data">
                             <div class="input-group">
-                                <input type="text" name="cari" value="{{ $cari }}" class="form-control" placeholder="Search dashboard...">
-                                <span class="input-group-btn"><button type="submit" class="btn btn-primary">Go</button></span>
+                                <input type="text" name="cari" value="{{ $cari }}" class="form-control btn-xs" placeholder="SiahkanKetikanRefCari...">
+                                <span class="input-group-btn"><button type="submit" class="btn btn-success"><i class="fa fa-search">CariBoskuh</i></button></span>
                             </div>
                         </form>
                         

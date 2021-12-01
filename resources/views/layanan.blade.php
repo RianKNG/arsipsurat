@@ -7,12 +7,12 @@
                 <div class="col-md-12">
                     <div class="panel">
                         <div class="panel-heading">
-                            <h3 class="panel-title">CariRentanTanggal</h3><br>
+                            <h3 class="panel-title"><b font-weight: bold;>CariRentanTanggal</b></h3>
                             <form  class="navbar-form navbar-left" action="/surat" method="POST">
                                 @csrf
-                                <input type="date" class="btn btn-warning btn-sm"  name="from" value="{{ date('Y-m-d') }}" >&nbsp;
-                                <input type="date" class="btn btn-info btn-sm"name="to" value="{{ date('Y-m-d') }}" >&nbsp;
-                                <input type="submit" value="View" class="btn btn-success btn-sm">
+                                <input type="date" class="btn-xs"  name="from" value="{{ date('Y-m-d') }}" >&nbsp;
+                                <input type="date" class="btn-xs"name="to" value="{{ date('Y-m-d') }}" >&nbsp;
+                                <input type="submit" value="cari" class="btn btn-success btn-xs">
                                 <a href="/layanan" class = "btn btn-danger btn-xs">refresh</a>
                             </form>
                         
@@ -38,7 +38,7 @@
                                         <th>StatusSurat</th>
                                         <th>ba_id</th>
                                         {{-- <th>Lampiran</th> --}}
-                                        <th>Pengirim</th>
+                                        {{-- <th>Pengirim</th> --}}
                                         <th>Tanggal</th>
                                        
                                        
@@ -55,7 +55,7 @@
                 
                                         <td><a href="/surat/{{ $srt->id }}/profile">{{ $srt->no_surat }}</a></td>
                                         {{-- <td>{{ $srt->id }}</td> --}}
-                                        <td>{{ $srt->status_surat }}</td>
+                                        {{-- <td>{{ $srt->status_surat }}</td> --}}
                                         {{-- <td>{{ $srt->ba->id}}</td> --}}
                                         {{-- <td>{{ $srt->ba->kode}}</td> --}}
                                         {{-- <td>{{ $srt->ba->lampiran }}</td> --}}

@@ -6,12 +6,13 @@
 				<div class="navbar-btn">
 					<button type="button" class="btn-toggle-fullwidth"><i class="lnr lnr-arrow-left-circle"></i></button>
 				</div>
+				
 				{{-- <form class="navbar-form navbar-left">
 					<div class="input-group">
 						<input type="text" value="" class="form-control" placeholder="Search dashboard...">
 						<span class="input-group-btn"><button type="button" class="btn btn-primary">Go</button></span>
 					</div>
-				</form> --}}
+				</form>  --}}
 			
 				<div id="navbar-menu">
 					<ul class="nav navbar-nav navbar-right">
@@ -55,6 +56,13 @@
 							<a class="update-pro" href="https://www.themeineed.com/downloads/klorofil-pro-bootstrap-admin-dashboard-template/?utm_source=klorofil&utm_medium=template&utm_campaign=KlorofilPro" title="Upgrade to Pro" target="_blank"><i class="fa fa-rocket"></i> <span>UPGRADE TO PRO</span></a>
 						</li> -->
 					</ul>
+				
+						
+					
 				</div>
+				{{-- <marquee></marquee> --}}
+				
+				
 			</div>
+			<marquee bgcolor="87CEEB" align ="center" direction ="left" scrollamount="5" class="italic"><i font-weight: bold;>S e j a t i n y a &nbsp; &nbsp; &nbsp; T u k a n g l e d e n g &nbsp; &nbsp; &nbsp; S e j a t i !!! P V D R T E A M</marquee>
 		</nav>
