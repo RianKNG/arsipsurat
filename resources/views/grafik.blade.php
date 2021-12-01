@@ -17,46 +17,46 @@
                     <div class="row">
                         <div class="col-md-3">
                             <div class="metric btn-danger">
-                                <span class="icon"><i class="fa fa-download"></i></span>
+                                <span class="icon"><i class="fa fa-thumbs-up"></i></span>
                                 <p>
                                     <span class="number">{{ $total }}</span>
-                                    <span class="title">SuratPenutupan</span>
+                                    <span class="title">slBaru</span>
                                 </p>
                             </div>
                         </div>
                         <div class="col-md-3">
                             <div class="metric btn-success">
-                                <span class="icon"><i class="fa fa-download"></i></span>
+                                <span class="icon"><i class="fa fa-link"></i></span>
                                 <p>
                                     <span class="number">{{ $total1 }}</span>
-                                    <span class="title">SuratPenyambungan</span>
+                                    <span class="title">slSambung</span>
                                 </p>
                             </div>
                         </div>
                         <div class="col-md-3">
                             <div class="metric btn-info">
-                                <span class="icon"><i class="fa fa-download"></i></span>
+                                <span class="icon"><i class="fa fa-users"></i></span>
                                 <p>
                                     <span class="number">{{ $total2 }}</span>
-                                    <span class="title">SuratPenggantian</span>
+                                    <span class="title">slGanti</span>
                                 </p>
                             </div>
                         </div>
                         <div class="col-md-3">
                             <div class="metric btn-warning">
-                                <span class="icon"><i class="fa fa-download"></i></span>
+                                <span class="icon"><i class="fa fa-lock"></i></span>
                                 <p>
                                     <span class="number">{{ $total }}</span>
-                                    <span class="title">SuratLainnya</span>
+                                    <span class="title">slTutup</span>
                                 </p>
                             </div>
                         </div>
                         <div class="col-md-3">
                             <div class="metric btn-primary">
-                                <span class="icon"><i class="fa fa-download"></i></span>
+                                <span class="icon"><i class="fa fa-paperclip"></i></span>
                                 <p>
                                     <span class="number">{{ $total }}</span>
-                                    <span class="title">SuratPemasangan Baru</span>
+                                    <span class="title">slLainnya</span>
                                 </p>
                             </div>
                         </div>

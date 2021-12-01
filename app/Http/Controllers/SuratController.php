@@ -94,6 +94,21 @@ class SuratController extends Controller
         return view ('layanan',compact('surat'));
         // dd($surat);
     }
+    public function cetak()
+    {
+        return view('surat.cetak');
+    }
+    public function cetakpertanggal($tglawal,$tglakhir)
+    {
+        // dd(['tanggal awal :'.$tglawal, 'tanggal akhir :'.$tglakhir]);
+        $cetakpertanggal=SuratModel::whereBetween('tanggal',[$tglawal,$tglakhir])->get();
+        // return view('surat.cetaksuratpertanggal',compact('cetakpertanggal'));
+        // return view('surat.cetaksuratpertanggal',['cetakpertanggal'=>$cetakpertanggal]);
+        view()->share('cetakpertanggal', $cetakpertanggal);
+        $pdf = PDF::loadview('surat.cetaksuratpertanggal');
+        return $pdf->download('cetaksuratpertanggal.pdf');
+    }
+
        
     
 }

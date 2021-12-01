@@ -49,6 +49,8 @@ Route::post('/surat',[SuratController::class,'searchBydate']);
 Route::get('/layanan',[LayananController::class,'index']);
 Route::post('/Layanan',[SuratController::class,'searchBydate']);
 Route::post('/ba/tambahba',[BaController::class,'create']);
+Route::get('/surat/cetak',[SuratController::class,'cetak']);
+Route::get('/surat/cetakpertanggal/{tglawal}/{tglakhir}',[SuratController::class,'cetakpertanggal'])->name('cetakpertanggal');
 
 
 
