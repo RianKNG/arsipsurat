@@ -27,10 +27,12 @@
 }
 </style>
 </head>
+
 <body>
 
-<h1>DataSurat</h1>
 
+<center><img src="{{ ('admin/assets/img/logo-dark4.jpg') }}"width="70" height="70"alt="">
+    <h1><center>DataSurat</center></h1>
 <table id="customers">
   <tr>
     <th width="6px">No</th>
