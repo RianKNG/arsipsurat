@@ -31,7 +31,7 @@
 <body>
 
 
-<center><img src="{{ ('admin/assets/img/logo-dark4.jpg') }}"width="70" height="70"alt="">
+<center><img src="{{ ('admin/assets/img/logo-dark4.jpg') }}"width="70" height="50"alt="">
     <h1><center>DataSurat</center></h1>
 <table id="customers">
   <tr>

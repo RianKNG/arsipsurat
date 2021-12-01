@@ -20,7 +20,7 @@
                                 <span class="icon"><i class="fa fa-thumbs-up"></i></span>
                                 <p>
                                     <span class="number">{{ $total }}</span>
-                                    <span class="title">slBaru</span>
+                                    <span class="title fa fa-envelope">&nbsp; &nbsp; slBaru</span>
                                 </p>
                             </div>
                         </div>
@@ -29,7 +29,7 @@
                                 <span class="icon"><i class="fa fa-link"></i></span>
                                 <p>
                                     <span class="number">{{ $total1 }}</span>
-                                    <span class="title">slSambung</span>
+                                    <span class="title fa fa-envelope" >&nbsp; slSmbg</span>
                                 </p>
                             </div>
                         </div>
@@ -38,7 +38,7 @@
                                 <span class="icon"><i class="fa fa-users"></i></span>
                                 <p>
                                     <span class="number">{{ $total2 }}</span>
-                                    <span class="title">slGanti</span>
+                                    <span class="title fa fa-envelope"> &nbsp;  slGanti</span>
                                 </p>
                             </div>
                         </div>
@@ -47,7 +47,7 @@
                                 <span class="icon"><i class="fa fa-lock"></i></span>
                                 <p>
                                     <span class="number">{{ $total }}</span>
-                                    <span class="title">slTutup</span>
+                                    <span class="title fa fa-envelope">&nbsp; slTutup</span>
                                 </p>
                             </div>
                         </div>
@@ -56,7 +56,7 @@
                                 <span class="icon"><i class="fa fa-paperclip"></i></span>
                                 <p>
                                     <span class="number">{{ $total }}</span>
-                                    <span class="title">slLainnya</span>
+                                    <span class="title fa fa-envelope">&nbsp;  slLain</span>
                                 </p>
                             </div>
                         </div>

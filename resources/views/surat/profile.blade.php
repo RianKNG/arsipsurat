@@ -15,7 +15,7 @@
                             <div class="overlay"></div>
                             <div class="">
 
-                                <img src="{{ asset('images/'.$surat->foto) }}" alt="" width="320px" height="400px">
+                                <img src="{{ asset('images/'.$surat->foto) }}" alt="" width="280px" height="400px">
                                 {{-- <span class="online-status status-available">Available</span> --}}
                             </div>
                             <div class="profile-stat">
