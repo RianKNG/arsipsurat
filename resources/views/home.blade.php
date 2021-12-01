@@ -30,9 +30,9 @@
 				<div class="auth-box ">
 					<div class="left">
 						<div class="content">
-                            <div class="card-header">{{ __('Dashboard') }}</div>
+                            <div class="card-header">{{ __('') }}</div>
 							<div class="header">
-								<div class="logo text-center"><img src="{{ asset('admin/assets/img/logo-dark.png') }}" alt="Klorofil Logo"></div>
+								<div class="logo text-center"><img src="{{ asset('admin/assets/img/logo-dark.jpg') }}" alt="Klorofil Logo"></div>
 								<p class="lead">Login to your account</p>
 							</div>
                             <form method="POST" action="{{ route('login') }}">
@@ -73,8 +73,8 @@
 					<div class="right">
 						<div class="overlay"></div>
 						<div class="content text">
-							<h1 class="heading">Free Bootstrap dashboard template</h1>
-							<p>by The Coba</p>
+							<h1 class="heading">Aplikasi Pengelolaan Arsip Surat</h1>
+							<p>DibuatOleh: PVDRteam</p>
 						</div>
 					</div>
 					<div class="clearfix"></div>
