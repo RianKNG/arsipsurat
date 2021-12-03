@@ -20,7 +20,7 @@
                                 <span class="icon"><i class="fa fa-thumbs-up"></i></span>
                                 <p>
                                     <span class="number">{{ $total }}</span>
-                                    <span class="title fa fa-envelope">&nbsp; &nbsp; slBaru</span>
+                                    <span class="title fa fa-envelope">&nbsp;  slBaru</span>
                                 </p>
                             </div>
                         </div>

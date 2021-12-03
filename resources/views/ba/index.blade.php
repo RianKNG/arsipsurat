@@ -72,7 +72,7 @@
                                     <tr>
                                         
                                         {{-- <th>Id</th> --}}
-                                        <th  bgcolor='#EE6868' align='center' width="6px">SuratId</th>
+                                        <th  bgcolor='	#8FBC8F' align='center' width="6px">SuratId</th>
                                         <th>Kode</th>
                                         <th>Pengirim</th>
                                         <th>Lampiran</th>
@@ -98,7 +98,7 @@
                                       
                                         
                                       
-                                        {{-- <td>{{ $baa->surat->pengirim}}</td> --}}
+                                        <td>{{ $baa->surat->foto}}</td>
                                         <td>{{ $baa->lampiran }}</td>
                                         <td>{{ $baa->pdf }}<a href="{{ asset('images/'.$baa->pdf) }}" alt=""><i class="fa fa-download"></i></a></td>
                                         <td>

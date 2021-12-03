@@ -30,7 +30,7 @@ class LayananController extends Controller
         $cari = $request->cari;
         $surat=SuratModel::where ('tanggal','>=', $request->from)
         ->where ('tanggal','<=', $request->to)
-        ->paginate(2);
+        ->paginate(5);
     
 
         // $cari = $request->cari;

@@ -32,7 +32,7 @@
 						<div class="content">
                             <div class="card-header">{{ __('') }}</div>
 							<div class="header">
-								<div class="logo text-center"><img src="{{ asset('admin/assets/img/logo-dark.jpg') }}" alt="Klorofil Logo"></div>
+								<div class="logo text-center"><img src="{{ asset('admin/assets/img/logo-dark.png') }}" alt="Klorofil Logo"></div>
 								<p class="lead">Login to your account</p>
 							</div>
                             <form method="POST" action="{{ route('login') }}">

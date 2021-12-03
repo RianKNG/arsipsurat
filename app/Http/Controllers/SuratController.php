@@ -3,12 +3,14 @@
 namespace App\Http\Controllers;
 
 // use Barryvdh\DomPDF\PDF;
-use App\Models\SuratModel;
-
-
-
-use Illuminate\Http\Request;
 use PDF;
+
+
+
+use App\Models\SuratModel;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+
 class SuratController extends Controller
 {
     public function index(Request $request)
@@ -20,7 +22,8 @@ class SuratController extends Controller
         // }
         $cari = $request->cari;
         $surat = SuratModel::where('no_surat','LIKE','%'.$request->cari.'%')
-        ->paginate(2);
+        ->orwhere('id','LIKE','%'.$request->cari.'%')
+        ->paginate(5);
         // $surat = SuratModel::all();
 
         $total=SuratModel::where('pengirim','T')
@@ -109,6 +112,4 @@ class SuratController extends Controller
         return $pdf->download('cetaksuratpertanggal.pdf');
     }
 
-       
-    
 }

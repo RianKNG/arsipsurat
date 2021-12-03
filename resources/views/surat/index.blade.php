@@ -55,6 +55,10 @@
                                     <div class="modal-body">
                                         <form action="/surat/tambahsurat" method=post>
                                             @csrf
+                                            <div class="mb-3">
+                                                <label for="exampleInputEmail1" class="form-label">noSurat</label>
+                                                <input type="integer" name="id" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                                </div>
                                               <div class="mb-3">
                                             <label for="exampleInputEmail1" class="form-label">noSurat</label>
                                             <input type="integer" name="no_surat" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
@@ -87,7 +91,7 @@
                                             </div> 
                                             <div class="mb-3">
                                                 <label for="exampleInputEmail1" class="form-label">Foto</label>
-                                                <input type="file" name="foto"class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                                <input type="file" name="foto"class="form-control"  aria-describedby="emailHelp">
                                             </div>
                                             
                                     </div>
@@ -114,7 +118,7 @@
                                          {{-- <th>Lampiran</th> --}}
                                         <th>Tanggal</th>
                                         <th>Keterangan</th>
-                                        <th>test</th>
+                                        <th>foto</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
@@ -124,8 +128,9 @@
                                 @endphp
                                 <tbody>
                                     @foreach ($surat as $index =>$srt)
+                                    {{-- @php $path = Storage::url('images/'.$srt->foto); @endphp --}}
                                     <tr>
-                                        {{-- <td>{{ $index + $surat->firstItem()}}</td> --}}
+                                        <td>{{ $index + $surat->firstItem()}}</td>
                                         <td>{{ $srt->id }}</td>
                                         <td><a href="/surat/{{ $srt->id }}/profile">{{ $srt->no_surat }}</a></td>
                                  
@@ -134,15 +139,23 @@
                                         {{-- <td>{{ $srt->ba->kode}}</td> --}}
                                         {{-- <td>{{ $srt->ba_id }}</td> --}}
                                         <td>{{ $srt->pengirim }}</td>
+                                        <td>{{ $srt->foto }}<a href="{{ asset('images/'.$srt->foto) }}" alt="">&nbsp; &nbsp;<i class="fa fa-eye"></i></a></td>
+                                        <td>
+                                            <a href="{{ asset('images/'.$srt->foto) }}" alt=""></a>
+                                        </td>
+{{--                                       
                                         {{-- <td>{{ $srt->ba->lampiran }}</td> --}}
                                         <td>{{ $srt->tanggal }}</td>
                                         <td>{{ $srt->keterangan }}</td>
-                                        <td>{{ $srt->test() }}</td>
-
                                         {{-- <td>{{ $srt->foto }}</td> --}}
+
+                                        {{-- <td><img src="/surat/{{ $srt->id }}/downloadjpg" width="100px" height="100px"></td>
+                      <td>{{ $path }}</td>
+                      <td><a href="{{ url($path) }}">Download</a></td> --}}
                                         <td>
                                             <a href="/surat/{{ $srt->id }}/editsurat" class="btn-warning btn-xs fa fa-edit"></a>
                                             <a href="/surat/{{ $srt->id }}/hapussurat" class="btn-danger btn-xs fa fa-trash"></a>
+                                            <a href="{{ asset('images/'.$srt->foto) }}" class="btn-info btn-xs fa fa-download" download=""></a>
                                         </td>
                                     </tr>  
                                     @endforeach

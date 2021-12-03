@@ -18,6 +18,11 @@
                                 <img src="{{ asset('images/'.$surat->foto) }}" alt="" width="280px" height="400px">
                                 {{-- <span class="online-status status-available">Available</span> --}}
                             </div>
+                            
+                            <div>
+                           
+                            </div>
+                           
                             <div class="profile-stat">
                                 <div class="row">
                                     <div class="col-md-12 stat-item">
@@ -45,6 +50,8 @@
                             </div>
                             <div class="text-center"><a href="/surat/{{ $surat->id }}/editsurat" class="btn btn-primary">EditFoto</a></div>
                         </div>
+                        <a href="/surat/download/{{ $surat->foto }}">download</a>
+                        {{-- <td>{{ $surat->foto }}</td> --}}
                         <!-- END PROFILE DETAIL -->
                     </div>
                     <!-- END LEFT COLUMN -->
@@ -71,9 +78,19 @@
 												<th>Judul Surat</th>
 												<th>Total Lampiran</th>
 												<th>Pengirim</th>
+                                                <a href="{{ asset('$surat->foto') }}">donload</a>
                                               
 											</tr>
 										</thead>
+                                        {{-- @foreach ($surat as $item) --}}
+                                    
+                                        <tr>
+                                            <td>{{ $surat->foto }}</td>
+                                            <td>Steve</td>
+                                            <td>Jobs</td>
+                                            <td>@steve</td>
+                                        </tr>
+                                        {{-- @endforeach --}}
 										<tbody>
 											<tr>
 												<td>1</td>
