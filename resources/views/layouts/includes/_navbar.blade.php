@@ -31,7 +31,7 @@
 								<li><a href="#" class="more">See all notifications</a></li>
 							</ul>
 						</li>
-						<li class="dropdown">
+						{{-- <li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="lnr lnr-question-circle"></i> <span>Help</span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
 							<ul class="dropdown-menu">
 								<li><a href="#">Basic Use</a></li>
@@ -39,21 +39,22 @@
 								<li><a href="#">Security</a></li>
 								<li><a href="#">Troubleshooting</a></li>
 							</ul>
-						</li>
+						</li> --}}
 						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="{{ asset('admin/assets/img/user.png') }}" class="img-circle" alt="Avatar"> <span>Samuel</span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="{{ asset('admin/assets/img/user.png') }}" class="img-circle" alt="Avatar"> <span>{{ auth()->user()->name }}</span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
 							<ul class="dropdown-menu">
-								{{-- <li><a href="#"><i class="lnr lnr-user"></i> <span>My Profile</span></a></li> --}}
-								<form id="logout-form" action="#" method="POST" class="d-none">
+								{{-- {{ asset('images/'.$surat->foto) }} --}}
+								<li><a href="#"><i class="lnr lnr-user"></i> <span>My Profile</span></a></li>
+								{{-- <form id="logout-form" action="#" method="POST" class="d-none">
 									@csrf
 									<li><button type="submit"><i class="lnr lnr-user"></i> <span>MyProfile</span></button></li>
-								</form>
-								{{-- <li><a href="#"><i class="lnr lnr-envelope"></i> <span>Message</span></a></li> --}}
+								</form> --}}
+								<li><a href="/logout" id="logout-form" ><i class="lnr lnr-exit"></i> <span>Logout</span></a></li>
 								{{-- <li><a href="#"><i class="lnr lnr-cog"></i> <span>Settings</span></a></li> --}}
-								<form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+								{{-- <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
 									@csrf
-									<li><button type="submit"><i class="lnr lnr-exit"></i> <span>Log  out</span></button></li>
-								</form>
+									<li><button type="submit"><i class="lnr lnr-exit"></i> <span>Log out</span></button></li>
+								</form> --}}
 								{{-- <li><a href="#"><i class="lnr lnr-exit"></i> <span>Logout</span></a></li> --}}
 							</ul>
 						</li>

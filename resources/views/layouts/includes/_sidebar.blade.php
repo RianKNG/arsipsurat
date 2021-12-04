@@ -9,7 +9,8 @@
                
                 <li><a href="/layanan" class=""><i class="lnr lnr-cog"></i> <span>linKDataTable</span></a></li>
                 <li><a href="/exportpdf" onclick ="alert('yakin ingin download')" class=""><i class="fa fa-download"></i> <span>downLoadPDF</span></a></li>
-                <li><a href="/surat/cetak" class=""><i class="fa fa-calendar"></i> <span>CetakByTgl</span></a></li>  
+                <li><a href="/surat/cetak" class=""><i class="fa fa-calendar"></i> <span>CetakByTgl</span></a></li>
+                <li><a href="/logout" class=""><i class="lnr lnr-exit"></i> <span>Logout</span></a></li>  
             </ul>
         </nav>
     </div>
