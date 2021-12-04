@@ -1,6 +1,7 @@
 <nav class="navbar navbar-default navbar-fixed-top">
+	
 			<div class="brand">
-				<a href="index.html"><img src="{{ asset('admin/assets/img/logo-dark.png') }}" alt="Klorofil Logo" class="img-responsive logo"></a>
+				<a href="index.html"><img src="{{ asset('admin/assets/img/logo-dark4.jpg') }}"width="30" height="20"alt=""><img src="{{ asset('admin/assets/img/logo-dark4.jpg') }}"width="50" height="30"alt="">||PVDRTEAM</a>
 			</div>
 			<div class="container-fluid">
 				<div class="navbar-btn">
@@ -42,12 +43,16 @@
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="{{ asset('admin/assets/img/user.png') }}" class="img-circle" alt="Avatar"> <span>Samuel</span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
 							<ul class="dropdown-menu">
-								<li><a href="#"><i class="lnr lnr-user"></i> <span>My Profile</span></a></li>
-								<li><a href="#"><i class="lnr lnr-envelope"></i> <span>Message</span></a></li>
-								<li><a href="#"><i class="lnr lnr-cog"></i> <span>Settings</span></a></li>
+								{{-- <li><a href="#"><i class="lnr lnr-user"></i> <span>My Profile</span></a></li> --}}
+								<form id="logout-form" action="#" method="POST" class="d-none">
+									@csrf
+									<li><button type="submit"><i class="lnr lnr-user"></i> <span>MyProfile</span></button></li>
+								</form>
+								{{-- <li><a href="#"><i class="lnr lnr-envelope"></i> <span>Message</span></a></li> --}}
+								{{-- <li><a href="#"><i class="lnr lnr-cog"></i> <span>Settings</span></a></li> --}}
 								<form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
 									@csrf
-									<li><button type="submit"><i class="lnr lnr-exit"></i> <span>Logout</span></button></li>
+									<li><button type="submit"><i class="lnr lnr-exit"></i> <span>Log  out</span></button></li>
 								</form>
 								{{-- <li><a href="#"><i class="lnr lnr-exit"></i> <span>Logout</span></a></li> --}}
 							</ul>
@@ -60,9 +65,10 @@
 						
 					
 				</div>
+					
 				{{-- <marquee></marquee> --}}
 				
 				
 			</div>
-			<marquee bgcolor="" align ="center" direction ="left" scrollamount="5" class="italic"><i font-weight: bold;>S e j a t i n y a &nbsp; &nbsp; &nbsp; T u k a n g l e d e n g &nbsp; &nbsp; &nbsp; S e j a t i !!! P V D R T E A M</marquee>
+			{{-- <marquee bgcolor="" align ="center" direction ="left" scrollamount="5" class="italic "><i font-weight: bold; class="text-primary">S e j a t i n y a &nbsp; &nbsp; &nbsp; T u k a n g l e d e n g &nbsp; &nbsp; &nbsp; S e j a t i !!! P V D R T E A M</marquee> --}}
 		</nav>

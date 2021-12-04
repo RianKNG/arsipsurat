@@ -7,7 +7,7 @@
                 <div class="col-md-12">
                     <div class="panel">
                         <div class="panel-heading">
-                            <h3 class="panel-title"><b font-weight: bold;>CariRentanTanggal</b></h3>
+                            <h3 class="panel-title"><b font-weight: bold;><img src="{{ asset('admin/assets/img/logo-dark4.jpg') }}"width="50" height="30"alt="">CariRentanTanggal</b></h3>
                             <form  class="navbar-form navbar-left" action="/surat" method="POST">
                                 @csrf
                                 <input type="date" class="btn-xs"  name="from" value="{{ date('Y-m-d') }}" >&nbsp;

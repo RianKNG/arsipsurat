@@ -7,7 +7,7 @@
                 <div class="col-md-12">
                     <div class="panel">
                         <div class="panel-heading">
-                            <h3 class="panel-title"><b font-weight: bold;>TabelLampirant</b></h3>
+                            <h3 class="panel-title"><b font-weight: bold;><img src="{{ asset('admin/assets/img/logo-dark4.jpg') }}"width="50" height="30"alt="">TabelLampirant</b></h3>
                             <div class="right">
 										<button type="button" class="btn" data-toggle="modal" data-target="#exampleModal"><i class="btn btn-primary btn-sm fa fa-plus">Lampiran</i></button>
                             </div>

@@ -26,8 +26,7 @@ class SuratController extends Controller
         ->paginate(5);
         // $surat = SuratModel::all();
 
-        $total=SuratModel::where('pengirim','T')
-        ->count();
+        $total=SuratModel::count();
 
         
         return view ('surat.index',compact('surat','cari','total'));

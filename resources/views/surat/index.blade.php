@@ -15,7 +15,7 @@
                                 <input type="submit" value="cari">
                                 <a href="/surat">refresh</a>
                             </form> --}}
-                            <h3 class="panel-title"><b  font-weight: bold;>TabelSurat</b></h3>
+                            <h3 class="panel-title"><b  font-weight: bold;><img src="{{ asset('admin/assets/img/logo-dark4.jpg') }}"width="50" height="30"alt="">TabelSurat</b></h3>
                             <div class="right">
 										<button type="button" class="btn" data-toggle="modal" data-target="#exampleModal"><i class="btn btn-primary btn-xs btn-xs fa fa-plus">Surat</i></button>
                             </div>
@@ -37,11 +37,7 @@
                                 <span class="input-group-btn"><button type="submit" class="btn btn-success"><i class="fa fa-search">CariBoskuh</i></button></span>
                             </div>
                         </form>
-                        
-                        
-                       <!-- Button trigger modal -->
-                        
-  
+
                             <!-- Modal -->
                             <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
@@ -108,17 +104,17 @@
                             <table class="table table-hover">
                                 <thead>
                                     <tr>
-                                        {{-- <th>No</th> --}}
-                                        <th>Id</th>
+                                        <th>No</th>
+                                        <th  bgcolor='	danger' align='center' width="6px">unikId</th>
                                         <th >NoSurat</th>
-                                        <th>StatusSurat</th>
-                                        {{-- <th>ba_id</th>
-                                        --}}
-                                        <th>Pengirim</th>
+                                        <th>StSur</th>
+                                        <th>Label</th>
+                                        
+                                        <th>Cabang</th>
                                          {{-- <th>Lampiran</th> --}}
-                                        <th>Tanggal</th>
-                                        <th>Keterangan</th>
-                                        <th>foto</th>
+                                        <th>Foto</th>
+                                        {{-- <th>Tanggal</th> --}}
+                                        <th>Ket</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
@@ -135,17 +131,17 @@
                                         <td><a href="/surat/{{ $srt->id }}/profile">{{ $srt->no_surat }}</a></td>
                                  
                                         <td>{{ $srt->status_surat }}</td>
-                                        {{-- <td>{{ $srt->ba->id}}</td> --}}
+                                        <td>{{ $srt->label}}</td>
                                         {{-- <td>{{ $srt->ba->kode}}</td> --}}
                                         {{-- <td>{{ $srt->ba_id }}</td> --}}
                                         <td>{{ $srt->pengirim }}</td>
                                         <td>{{ $srt->foto }}<a href="{{ asset('images/'.$srt->foto) }}" alt="">&nbsp; &nbsp;<i class="fa fa-eye"></i></a></td>
-                                        <td>
+                                        {{-- <td>
                                             <a href="{{ asset('images/'.$srt->foto) }}" alt=""></a>
-                                        </td>
+                                        </td> --}}
 {{--                                       
                                         {{-- <td>{{ $srt->ba->lampiran }}</td> --}}
-                                        <td>{{ $srt->tanggal }}</td>
+                                        {{-- <td>{{ $srt->tanggal }}</td> --}}
                                         <td>{{ $srt->keterangan }}</td>
                                         {{-- <td>{{ $srt->foto }}</td> --}}
 

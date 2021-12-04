@@ -51,5 +51,5 @@
 	<script src="{{ asset('admin/assets/scripts/klorofil-common.js') }}"></script>
 
 </body>
-
+<marquee bgcolor="" align ="center" direction ="left" scrollamount="5" class="italic "><i font-weight: bold; class="text-primary">S e j a t i n y a &nbsp; &nbsp; &nbsp; T u k a n g l e d e n g &nbsp; &nbsp; &nbsp; S e j a t i !!! P V D R T E A M</marquee> 
 </html>

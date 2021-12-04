@@ -8,7 +8,7 @@
                     <div class="panel">
                         <div class="panel-heading">
                             <div class="panel-heading">
-                                <h3 class="panel-title"><b  font-weight: bold;>CetakPerTanggal</b></h3>
+                                <h3 class="panel-title"><b  font-weight: bold;><img src="{{ asset('admin/assets/img/logo-dark4.jpg') }}"width="70" height="50"alt="">CetakPerTanggal</b></h3>
                             </div>
                             <div class="car-body">
                                 <div class="mb-12">
@@ -22,7 +22,7 @@
                                 <br>
                                 
                                     <a href="" onclick="this.href='/surat/cetakpertanggal/'+document.getElementById('tglawal').value +
-                                    '/'+ getElementById('tglakhir').value" target="_blank" class="btn-warning col-md-12"><center><i class="fa fa-print">&nbsp; &nbsp; &nbsp;sebelumCetakKopiDuluuBoskuh</i></center> </a>
+                                    '/'+ getElementById('tglakhir').value" target="_blank" class="btn-primary col-md-12"><center><i class="fa fa-print text-white">&nbsp; &nbsp; &nbsp;sebelumCetakKopiDuluuBoskuh</i></center> </a>
                                    
                                     {{-- <div class="input-group mb-3">
                                         <button type="submit"><i class="btn-primary btn-xs">Cetak</i></button>
@@ -30,10 +30,14 @@
                                 
                                
                             </div>
+                         
+                                
                         </div>
                     </div>
                 </div>
             </div>
+            
+
         </div>
     </div>
 </div>
