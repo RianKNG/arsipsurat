@@ -56,15 +56,27 @@
                                                 <input type="integer" name="id" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                                                 </div>
                                               <div class="mb-3">
-                                            <label for="exampleInputEmail1" class="form-label">noSurat</label>
+                                                  
+                                            <label for="exampleInputEmail1" class="form-label mb-3">noSurat</label>
                                             <input type="integer" name="no_surat" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                                            </div>
-                                         
-                                            <select class="form-select form-select-lg mb-3" name="status_surat" aria-label=".form-select-lg example">
+                                            </div><br>
+                                            <div>
+                                            <select class="col-mb-12" name="status_surat" aria-label=".form-select-lg example">
                                                 <option selected>statusSurat</option>
                                                 <option value="Masuk">Masuk</option>
                                                 <option value="Keluar">Keluar</option>
                                             </select>
+                                        </div><br>
+                                        <div>
+                                            <select class="col-mb-12" name="label" aria-label=".form-select-lg example">
+                                                <option selected>Proses</option>
+                                                <option value="Baru">Baru</option>
+                                                <option value="Ganti">Ganti</option>
+                                                <option value="Sambung">Sambung</option>
+                                                <option value="Tutup">Tutup</option>
+                                            </select>
+                                        </div><br>
+                                        
                                             {{-- <div class="mb-3">
                                                 <label for="exampleInputEmail1" class="form-label">Pengirim</label>
                                                 <input type="text" name="pengirim" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
@@ -75,7 +87,12 @@
                                                         <option selected>PengirimCab</option>
                                                         <option value="Tomo">Tomo</option>
                                                         <option value="Paseh">Paseh</option>
-                                                        <option value="Cimanggung">Cimanggung</option>
+                                                        <option value="Cimalaka">Cimalaka</option>
+                                                        <option value="Tanjungkerta">Tanjungkerta</option>
+                                                        <option value="Situraja">Situraja</option>
+                                                        <option value="Wado">Wado</option>
+                                                        <option value="Sumedang Selatan">Sumedang Selatan</option>
+                                                        <option value="Jatinangor">Jatinangor</option>
                                                     </select>
                                             <div class="mb-3">
                                                 <label for="exampleInputEmail1" class="form-label">Tanggal</label>
@@ -92,8 +109,8 @@
                                             
                                     </div>
                                     <div class="modal-footer">
-                                    <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
-                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                    <button type="button" class="btn btn-warning" data-dismiss="modal">Kembali</button>
+                                    <button type="submit" class="btn btn-primary">Simpan</button>
                                 </form>
                            
                                     </div>
