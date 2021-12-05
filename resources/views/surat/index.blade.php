@@ -28,9 +28,7 @@
                                   
                                 </form>
                               </nav> --}}
-                             
-                           
-                            
+
                         <form class="navbar-form navbar-left" method="GET" action="/surat" enctype="multipart/form-data">
                             <div class="input-group">
                                 <input type="text" name="cari" value="{{ $cari }}" class="form-control btn-xs" placeholder="SiahkanKetikanRefCari...">
@@ -49,16 +47,16 @@
                                     </button>
                                     </div>
                                     <div class="modal-body">
-                                        <form action="/surat/tambahsurat" method=post>
+                                        <form action="/surat/tambahsurat" method="POST">
                                             @csrf
                                             <div class="mb-3">
-                                                <label for="exampleInputEmail1" class="form-label">noSurat</label>
+                                                <label for="exampleInputEmail1" class="form-label">UniqId</label>
                                                 <input type="integer" name="id" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                                                 </div>
                                               <div class="mb-3">
                                                   
-                                            <label for="exampleInputEmail1" class="form-label mb-3">noSurat</label>
-                                            <input type="integer" name="no_surat" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                            <label for="exampleInputEmail1" class="form-label mb-3">NoSurat</label>
+                                            <input type="text" name="no_surat" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                                             </div><br>
                                             <div>
                                             <select class="col-mb-12" name="status_surat" aria-label=".form-select-lg example">
@@ -67,23 +65,8 @@
                                                 <option value="Keluar">Keluar</option>
                                             </select>
                                         </div><br>
-                                        <div>
-                                            <select class="col-mb-12" name="label" aria-label=".form-select-lg example">
-                                                <option selected>Proses</option>
-                                                <option value="Baru">Baru</option>
-                                                <option value="Ganti">Ganti</option>
-                                                <option value="Sambung">Sambung</option>
-                                                <option value="Tutup">Tutup</option>
-                                            </select>
-                                        </div><br>
-                                        
-                                            {{-- <div class="mb-3">
-                                                <label for="exampleInputEmail1" class="form-label">Pengirim</label>
-                                                <input type="text" name="pengirim" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                                                </div> --}}
-                                          
-                                           
-                                                    <select class="form-select form-select-lg mb-3" name="pengirim" aria-label=".form-select-lg example">
+
+                                        <select class="form-select form-select-lg mb-3" name="pengirim" aria-label=".form-select-lg example">
                                                         <option selected>PengirimCab</option>
                                                         <option value="Tomo">Tomo</option>
                                                         <option value="Paseh">Paseh</option>
@@ -93,7 +76,16 @@
                                                         <option value="Wado">Wado</option>
                                                         <option value="Sumedang Selatan">Sumedang Selatan</option>
                                                         <option value="Jatinangor">Jatinangor</option>
-                                                    </select>
+                                        </select>
+                                        <div class="mb-3">
+                                            <label for="exampleInputEmail1" class="form-label">Label</label>
+                                            <input type="text" name="label" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="exampleInputEmail1" class="form-label">Jumlah</label>
+                                            <input type="integer" name="jumlah" class="form-control"  aria-describedby="emailHelp">
+                                        </div>
+                                        
                                             <div class="mb-3">
                                                 <label for="exampleInputEmail1" class="form-label">Tanggal</label>
                                                 <input type="date" name="tanggal" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
@@ -123,48 +115,36 @@
                                     <tr>
                                         <th>No</th>
                                         <th  bgcolor='	danger' align='center' width="6px">unikId</th>
-                                        <th >NoSurat</th>
+                                        <th width="200px" >NoSurat</th>
                                         <th>StSur</th>
-                                        <th>Label</th>
-                                        
                                         <th>Cabang</th>
-                                         {{-- <th>Lampiran</th> --}}
-                                        <th>Foto</th>
-                                        {{-- <th>Tanggal</th> --}}
-                                        <th>Ket</th>
+                                        {{-- <th>Label</th> --}}
+                                        {{-- // umpetin --}}
+                                         {{-- <th>Jml</th> --}}
+                                         <th>Foto</th>
+                                         {{-- <th>Tanggal</th>
+                                        <th>Ket</th> --}}
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
                                 @php
                                 $no=1;
-                                    
+                              
                                 @endphp
                                 <tbody>
                                     @foreach ($surat as $index =>$srt)
-                                    {{-- @php $path = Storage::url('images/'.$srt->foto); @endphp --}}
                                     <tr>
                                         <td>{{ $index + $surat->firstItem()}}</td>
-                                        <td>{{ $srt->id }}</td>
+                                        {{-- <td>{{ $srt->id }}</td> --}}
+                                        <td><a href="/surat/{{ $srt->id }}/profile">{{ $srt->id }}</a></td>
                                         <td><a href="/surat/{{ $srt->id }}/profile">{{ $srt->no_surat }}</a></td>
-                                 
                                         <td>{{ $srt->status_surat }}</td>
-                                        <td>{{ $srt->label}}</td>
-                                        {{-- <td>{{ $srt->ba->kode}}</td> --}}
-                                        {{-- <td>{{ $srt->ba_id }}</td> --}}
                                         <td>{{ $srt->pengirim }}</td>
+                                        {{-- <td>{{ $srt->label }}</td> --}}
+                                        {{-- <td>{{ $srt->jumlah}}</td> --}}
                                         <td>{{ $srt->foto }}<a href="{{ asset('images/'.$srt->foto) }}" alt="">&nbsp; &nbsp;<i class="fa fa-eye"></i></a></td>
-                                        {{-- <td>
-                                            <a href="{{ asset('images/'.$srt->foto) }}" alt=""></a>
-                                        </td> --}}
-{{--                                       
-                                        {{-- <td>{{ $srt->ba->lampiran }}</td> --}}
-                                        {{-- <td>{{ $srt->tanggal }}</td> --}}
-                                        <td>{{ $srt->keterangan }}</td>
-                                        {{-- <td>{{ $srt->foto }}</td> --}}
-
-                                        {{-- <td><img src="/surat/{{ $srt->id }}/downloadjpg" width="100px" height="100px"></td>
-                      <td>{{ $path }}</td>
-                      <td><a href="{{ url($path) }}">Download</a></td> --}}
+                                        {{-- <td>{{ $srt->tanggal }}</td>
+                                        <td>{{ $srt->keterangan }}</td> --}}
                                         <td>
                                             <a href="/surat/{{ $srt->id }}/editsurat" class="btn-warning btn-xs fa fa-edit"></a>
                                             <a href="/surat/{{ $srt->id }}/hapussurat" class="btn-danger btn-xs fa fa-trash"></a>

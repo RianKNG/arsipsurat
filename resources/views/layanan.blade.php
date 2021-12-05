@@ -1,4 +1,5 @@
 @extends('layouts.master')
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 @section('content')
 <div class="main">
     <div class="main-content">
@@ -13,9 +14,9 @@
                                 <input type="date" class="btn-xs"  name="from" value="{{ date('Y-m-d') }}" >&nbsp;
                                 <input type="date" class="btn-xs"name="to" value="{{ date('Y-m-d') }}" >&nbsp;
                                 <input type="submit" value="cari" class="btn btn-success btn-xs">
-                                <a href="/layanan" class = "btn btn-danger btn-xs">refresh</a>
+                                <a href="/layanan" class = "btn btn-danger btn-xs fa fa-refresh">refresh</a>
                             </form>
-                        
+                      
                             
                             {{-- <div class="right">
 										<button type="button" class="btn" data-toggle="modal" data-target="#exampleModal"><i class="btn btn-primary btn-sm">TambahSurat</i></button>
@@ -53,7 +54,7 @@
                                     <tr>
                                         {{-- <td>{{ $index + $surat->firstItem()}}</td> --}}
                 
-                                        <td><a href="/surat/{{ $srt->id }}/profile">{{ $srt->no_surat }}</a></td>
+                                        <td>{{ $srt->no_surat }}</td>
                                         {{-- <td>{{ $srt->id }}</td> --}}
                                         {{-- <td>{{ $srt->status_surat }}</td> --}}
                                         {{-- <td>{{ $srt->ba->id}}</td> --}}

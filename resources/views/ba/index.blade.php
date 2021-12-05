@@ -28,7 +28,7 @@
                                     </button>
                                     </div>
                                     <div class="modal-body">
-                                        <form action="/ba/tambahba" method="POST" enctype="multipart/form-data">
+                                        <form action="/ba/tambahba" method="POST" >
                                             @csrf
                                           
                                               {{-- <div class="mb-3">
@@ -40,10 +40,10 @@
                                                 <input type="integer" name="surat_id" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                                                 </div>
                                          
-                                            <div class="mb-3">
+                                            {{-- <div class="mb-3">
                                                 <label for="exampleInputEmail1" class="form-label">Kode</label>
                                                 <input type="integer" name="kode" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                                                </div>
+                                                </div> --}}
                                                 <div class="mb-3">
                                                     <label for="exampleInputEmail1" class="form-label">Lampiran</label>
                                                     <input type="text" name="lampiran" class="form-control" >

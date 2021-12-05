@@ -10,7 +10,9 @@ class SuratModel extends Model
     use HasFactory;
     protected $table='surat';
     // protected $fillable=['id','no_surat','status_surat','ba_id','pengirim','tanggal','keterangan','foto'];
-    protected $fillable=['id','no_surat','status_surat','label','pengirim','tanggal','keterangan','foto'];
+    protected $fillable=['id','no_surat','status_surat','pengirim','label','jumlah','tanggal','keterangan','foto'];
+    protected $primariKey=null;
+    public $incrementing =false;
     public function ba()
     {
         // return $this->belongsTo(Ba::class);

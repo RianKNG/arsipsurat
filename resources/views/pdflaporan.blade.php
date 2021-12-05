@@ -28,13 +28,24 @@
 </head>
 <body>
 
-<h1>DataSurat</h1>
-
+  {{-- 
+  <center><img src="{{ ('admin/assets/img/logo-dark4.jpg') }}"width="30" height="20"alt=""> --}}
+      <h1><center><img src="{{ ('admin/assets/img/logo-dark4.jpg') }}"width="50" height="30"alt="">DataSeluruhSurat</center></h1>
+      <?php
+  
+  setlocale(LC_TIME, 'id_ID.utf8');
+  
+  $hariIni = new DateTime();
+  
+  echo strftime('%a %d %b %Y, %H:%M', $hariIni->getTimestamp());
+  ?>
 <table id="customers">
   <tr>
     <th width="6px">No</th>
     <th>NoSurat</th>
     <th width="12px">StatusSurat</th>
+    <th>Label</th>
+    <th>Label</th>
     <th>Pengirim</th>
     <th>Tanggal</th>
     <th>Keterangan</th>
@@ -47,7 +58,8 @@
     <td>{{ $no++ }}</td>                                 
     <td id="customers">{{ $srt->no_surat }}</td>
     <td>{{ $srt->status_surat }}</td>
-    {{-- <td>{{ $srt->ba->kode }}</td> --}}
+    <td>{{ $srt->label }}</td>
+    <td>{{ $srt->jml_label }}</td>
     <td>{{ $srt->pengirim }}</td>
     <td>{{ $srt->tanggal }}</td>
     <td>{{ $srt->keterangan }}</td>

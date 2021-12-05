@@ -15,11 +15,13 @@ class CreateSuratTable extends Migration
     {
         Schema::create('surat', function (Blueprint $table) {
             $table->id();
-            $table->integer('no_surat');
+            $table->string('no_surat');
             $table->string('status_surat');
             $table->string('pengirim');
+            $table->string('label');
+            $table->integer('jumlah');
             $table->date('tanggal');
-            $table->text('keterangan');
+            $table->text('keterangan')->nullable();
             $table->string('foto');
             $table->timestamps();
         });

@@ -9,7 +9,9 @@ class Ba extends Model
 {
     use HasFactory;
     protected $table='ba';
-    protected $fillable=['id','surat_id','kode','jenis','lampiran','pdf'];
+    protected $fillable=['id','surat_id','jenis','lampiran','pdf'];
+    protected $primariKey=null;
+    public $incrementing =false;
     
     public function surat()
     {

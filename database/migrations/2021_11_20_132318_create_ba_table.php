@@ -15,9 +15,10 @@ class CreateBaTable extends Migration
     {
         Schema::create('ba', function (Blueprint $table) {
             $table->id();
-            $table->string('kode');
-            $table->string('nama');
-            $table->string('semester');
+            $table->unsignedBigInteger('surat_id');
+            $table->foreign('surat_id')->references('id')->on('surat');
+            $table->integer('lampiran');
+            $table->string('pdf');
             $table->timestamps();
         });
     }

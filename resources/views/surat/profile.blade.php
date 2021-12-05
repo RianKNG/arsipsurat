@@ -43,14 +43,17 @@
                         <!-- PROFILE DETAIL -->
                         <div class="profile-detail">
                             <div class="profile-info">
-                                <h4 class="heading">StatusSurat</h4>
+                                {{-- <h4 class="heading">StatusSurat</h4> --}}
                                 <ul class="list-unstyled list-justify">
 
                                 </ul>
                             </div>
                             <div class="text-center"><a href="/surat/{{ $surat->id }}/editsurat" class="btn btn-primary">EditFoto</a></div>
                         </div>
-                        <a href="/surat/download/{{ $surat->foto }}">download</a>
+                        {{-- <td ieu nu nyien lier teh>
+                            <a href="/surat/download/{{ $surat->foto }}">download</a>
+                        </td> --}}
+                        
                         {{-- <td>{{ $surat->foto }}</td> --}}
                         <!-- END PROFILE DETAIL -->
                     </div>
@@ -61,8 +64,8 @@
                         <!-- TABBED CONTENT -->
                         <div class="custom-tabs-line tabs-line-bottom left-aligned">
                             <ul class="nav" role="tablist">
-                                <li class="active"><a href="#tab-bottom-left1" role="tab" data-toggle="tab">Recent Activity</a></li>
-                                <li><a href="#tab-bottom-left2" role="tab" data-toggle="tab">Projects <span class="badge">7</span></a></li>
+                                <li class="active"><a href="/grafik" >KembaliKeDashboard</a></li>
+                                {{-- <li><a href="#tab-bottom-left2" role="tab" data-toggle="tab">Projects <span class="badge">7</span></a></li> --}}
                             </ul>
                         </div>
                        <!-- BORDERED TABLE -->
@@ -75,43 +78,24 @@
 										<thead>
 											<tr>
 												<th>No</th>
-												<th>Judul Surat</th>
-												<th>Total Lampiran</th>
-												<th>Pengirim</th>
-                                                <a href="{{ asset('$surat->foto') }}">donload</a>
-                                              
+												<th>StatusSL</th>
+                                                <th>Jumlah</th>
+												<th>StatusSL</th>
+                                                <th>Download</th>
 											</tr>
 										</thead>
                                         {{-- @foreach ($surat as $item) --}}
                                     
                                         <tr>
-                                            <td>{{ $surat->foto }}</td>
-                                            <td>Steve</td>
-                                            <td>Jobs</td>
-                                            <td>@steve</td>
-                                        </tr>
-                                        {{-- @endforeach --}}
-										<tbody>
-											<tr>
-												<td>1</td>
-												<td>Steve</td>
-												<td>Jobs</td>
-												<td>@steve</td>
-											</tr>
-											<tr>
-												<td>2</td>
-												<td>Simon</td>
-												<td>Philips</td>
-												<td>@simon</td>
-											</tr>
-											<tr>
-												<td>3</td>
-												<td>Jane</td>
-												<td>Doe</td>
-												<td>@jane</td>
-											</tr>
+                                            <td>1</td>
+                                            <td>{{ $surat->label }}</td>
+                                            <td>{{ $surat->jumlah }}</td>
+                                            <td>{{ $surat->keterangan }}</td>
+                                            <td>
+                                                <a href="{{ asset('images/'.$surat->foto) }}" class="btn-warning btn-xs fa fa-download" download=""></a>
+                                            </td>
                                            
-										</tbody>
+                                        </tr>
 									</table>
 								</div>
 							</div>
@@ -121,26 +105,26 @@
                                     <table class="table project-table">
                                         <thead>
                                             <tr>
-                                                <th>Title</th>
-                                                <th>Progress</th>
+                                                <th>KembaliKeSurat</th>
+                                                {{-- <th>Progress</th>
                                                 <th>Leader</th>
-                                                <th>Status</th>
+                                                <th>Status</th> --}}
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td><a href="#">Spot Media</a></td>
+                                                <td><a href="/surat">Kembali</a></td>
                                                 <td>
                                                     <div class="progress">
                                                         <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-                                                            <span>60% Complete</span>
+                                                            <span>{{ $surat->foto }}</span>
                                                         </div>
                                                     </div>
                                                 </td>
                                                 <td><img src="assets/img/user2.png" alt="Avatar" class="avatar img-circle"> <a href="#">Michael</a></td>
                                                 <td><span class="label label-success">ACTIVE</span></td>
                                             </tr>
-                                            <tr>
+                                            {{-- <tr>
                                                 <td><a href="#">E-Commerce Site</a></td>
                                                 <td>
                                                     <div class="progress">
@@ -151,8 +135,8 @@
                                                 </td>
                                                 <td><img src="assets/img/user1.png" alt="Avatar" class="avatar img-circle"> <a href="#">Antonius</a></td>
                                                 <td><span class="label label-warning">PENDING</span></td>
-                                            </tr>
-                                            <tr>
+                                            </tr> --}}
+                                            {{-- <tr>
                                                 <td><a href="#">Project 123GO</a></td>
                                                 <td>
                                                     <div class="progress">
@@ -163,9 +147,9 @@
                                                 </td>
                                                 <td><img src="assets/img/user1.png" alt="Avatar" class="avatar img-circle"> <a href="#">Antonius</a></td>
                                                 <td><span class="label label-success">ACTIVE</span></td>
-                                            </tr>
+                                            </tr> --}}
                                             <tr>
-                                                <td><a href="#">Wordpress Theme</a></td>
+                                                <td><a href="/surat">Wordpress Theme</a></td>
                                                 <td>
                                                     <div class="progress">
                                                         <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%;">

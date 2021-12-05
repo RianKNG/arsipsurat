@@ -7,6 +7,7 @@ use App\Http\Controllers\BaController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SuratController;
+use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\LayananController;
 
 
@@ -22,10 +23,6 @@ use App\Http\Controllers\LayananController;
 */
 
 Route::get('/', function () {
-    return view('home');
-    
-});
-Route::get('/logout', function () {
     return view('home');
     
 });
@@ -65,7 +62,12 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/ba/tambahba',[BaController::class,'create']);
     Route::get('/surat/cetak',[SuratController::class,'cetak']);
     Route::get('/surat/cetakpertanggal/{tglawal}/{tglakhir}',[SuratController::class,'cetakpertanggal'])->name('cetakpertanggal');
-        
-});
+   
+    
+    });
+
+    
+
+
 
 

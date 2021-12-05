@@ -6,7 +6,7 @@
 #customers {
   font-family: Arial, Helvetica, sans-serif;
   border-collapse: collapse;
-  width: 100%;
+  width: 50%;
 }
 
 #customers td, #customers th {
@@ -30,31 +30,43 @@
 
 <body>
 
+{{-- 
+<center><img src="{{ ('admin/assets/img/logo-dark4.jpg') }}"width="30" height="20"alt=""> --}}
+    <h1><center><img src="{{ ('admin/assets/img/logo-dark4.jpg') }}"width="50" height="30"alt="">DataSurat</center></h1>
+    <?php
 
-<center><img src="{{ ('admin/assets/img/logo-dark4.jpg') }}"width="70" height="50"alt="">
-    <h1><center>DataSurat</center></h1>
-<table id="customers">
-  <tr>
-    <th width="6px">No</th>
-    <th>NoSurat</th>
-    <th width="12px">StatusSurat</th>
-    <th>Pengirim</th>
-    <th>Tanggal</th>
-    <th>Keterangan</th>
-  </tr>
-  {{-- @php
-      $no=1;
-  @endphp --}}
-@foreach ($cetakpertanggal as $srt)
-<tr >  
-    {{-- <td>{{ $no++ }}</td>                                 
-    <td id="customers">{{ $srt->no_surat }}</td>
-    <td>{{ $srt->status_surat }}</td>
-    <td>{{ $srt->ba->kode }}</td> --}}
-    {{-- <td>{{ $srt->pengirim }}</td> --}}
-    <td>{{ $srt->tanggal }}</td>
-    {{-- <td>{{ $srt->keterangan }}</td>
-</tr>   --}}
+setlocale(LC_TIME, 'id_ID.utf8');
+
+$hariIni = new DateTime();
+
+echo strftime('%a %d %b %Y, %H:%M', $hariIni->getTimestamp());
+?>
+<div class="font-size 12px:">
+  <table id="customers">
+    <tr>
+      <th width="6px">No</th>
+      <th>NoSurat</th>
+      <th width="12px">StatusSurat</th>
+      <th>Pengirim</th>
+      <th>label</th>
+      <th>Jumlah</th>
+      <th>Tanggal</th>
+    </tr>
+    @php
+        $no=1;
+    @endphp
+  @foreach ($cetakpertanggal as $srt)
+  <tr >  
+      <td  id="customers">{{ $no++ }}</td>
+      <td>{{ $srt->no_surat }}</td>
+      <td>{{ $srt->status_surat }}</td>
+      <td>{{ $srt->pengirim }}</td>
+      <td>{{ $srt->label }}</td>
+      <td>{{ $srt->jumlah}}</td>
+      <td>{{ $srt->tanggal }}</td>
+  </tr>   
+</div>
+
     
 @endforeach
 
