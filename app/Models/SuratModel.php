@@ -9,5 +9,26 @@ class SuratModel extends Model
 {
     use HasFactory;
     protected $table='surat';
-    protected $fillable=['no_surat','status_surat','pengirim','tanggal','keterangan','foto'];
+    // protected $fillable=['id','no_surat','status_surat','ba_id','pengirim','tanggal','keterangan','foto'];
+    protected $fillable=['id','no_surat','status_surat','pengirim','label','jumlah','tanggal','keterangan','foto'];
+    protected $primariKey=null;
+    public $incrementing =false;
+    public function ba()
+    {
+        // return $this->belongsTo(Ba::class);
+        return $this->hasMany(Ba::class);
+    }
+    public function test()
+    {
+       $total= SuratModel::where('pengirim','T')
+       ->count();
+      
+       return $total;
+      
+        
+      }
+   
+
 }
+
+

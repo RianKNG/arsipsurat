@@ -1,17 +1,19 @@
 <nav class="navbar navbar-default navbar-fixed-top">
+	
 			<div class="brand">
-				<a href="index.html"><img src="{{ asset('admin/assets/img/logo-dark.png') }}" alt="Klorofil Logo" class="img-responsive logo"></a>
+				<a href="index.html"><img src="{{ asset('admin/assets/img/logo-dark4.jpg') }}"width="30" height="20"alt=""><img src="{{ asset('admin/assets/img/logo-dark4.jpg') }}"width="50" height="30"alt="">||PVDRTEAM</a>
 			</div>
 			<div class="container-fluid">
 				<div class="navbar-btn">
 					<button type="button" class="btn-toggle-fullwidth"><i class="lnr lnr-arrow-left-circle"></i></button>
 				</div>
-				<form class="navbar-form navbar-left">
+				
+				{{-- <form class="navbar-form navbar-left">
 					<div class="input-group">
 						<input type="text" value="" class="form-control" placeholder="Search dashboard...">
 						<span class="input-group-btn"><button type="button" class="btn btn-primary">Go</button></span>
 					</div>
-				</form>
+				</form>  --}}
 			
 				<div id="navbar-menu">
 					<ul class="nav navbar-nav navbar-right">
@@ -29,7 +31,7 @@
 								<li><a href="#" class="more">See all notifications</a></li>
 							</ul>
 						</li>
-						<li class="dropdown">
+						{{-- <li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="lnr lnr-question-circle"></i> <span>Help</span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
 							<ul class="dropdown-menu">
 								<li><a href="#">Basic Use</a></li>
@@ -37,13 +39,22 @@
 								<li><a href="#">Security</a></li>
 								<li><a href="#">Troubleshooting</a></li>
 							</ul>
-						</li>
+						</li> --}}
 						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="{{ asset('admin/assets/img/user.png') }}" class="img-circle" alt="Avatar"> <span>Samuel</span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="{{ asset('admin/assets/img/user.png') }}" class="img-circle" alt="Avatar"> <span>{{ auth()->user()->name }}</span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
 							<ul class="dropdown-menu">
-								<li><a href="#"><i class="lnr lnr-user"></i> <span>My Profile</span></a></li>
-								<li><a href="#"><i class="lnr lnr-envelope"></i> <span>Message</span></a></li>
-								<li><a href="#"><i class="lnr lnr-cog"></i> <span>Settings</span></a></li>
+								{{-- {{ asset('images/'.$surat->foto) }} --}}
+								{{-- <li><a href="#"><i class="lnr lnr-user"></i> <span>Profile</span></a></li> --}}
+								<form id="logout-form" action="#" method="#" class="d-none">
+									@csrf
+									<li><button type="submit"><i class="lnr lnr-exit"></i> <span>Profile</span></button></li>
+								</form>
+								{{-- <form id="logout-form" action="#" method="POST" class="d-none">
+									@csrf
+									<li><button type="submit"><i class="lnr lnr-user"></i> <span>MyProfile</span></button></li>
+								</form> --}}
+								{{-- <li><a href="/logout" id="logout-form" ><i class="lnr lnr-exit"></i> <span>Logout</span></a></li> --}}
+								{{-- <li><a href="#"><i class="lnr lnr-cog"></i> <span>Settings</span></a></li> --}}
 								<form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
 									@csrf
 									<li><button type="submit"><i class="lnr lnr-exit"></i> <span>Logout</span></button></li>
@@ -55,6 +66,14 @@
 							<a class="update-pro" href="https://www.themeineed.com/downloads/klorofil-pro-bootstrap-admin-dashboard-template/?utm_source=klorofil&utm_medium=template&utm_campaign=KlorofilPro" title="Upgrade to Pro" target="_blank"><i class="fa fa-rocket"></i> <span>UPGRADE TO PRO</span></a>
 						</li> -->
 					</ul>
+				
+						
+					
 				</div>
+					
+				{{-- <marquee></marquee> --}}
+				
+				
 			</div>
+			{{-- <marquee bgcolor="" align ="center" direction ="left" scrollamount="5" class="italic "><i font-weight: bold; class="text-primary">S e j a t i n y a &nbsp; &nbsp; &nbsp; T u k a n g l e d e n g &nbsp; &nbsp; &nbsp; S e j a t i !!! P V D R T E A M</marquee> --}}
 		</nav>

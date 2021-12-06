@@ -3,24 +3,43 @@
 namespace App\Http\Controllers;
 
 // use Barryvdh\DomPDF\PDF;
+use PDF;
+
+
+
 use App\Models\SuratModel;
 use Illuminate\Http\Request;
-use PDF;
+use Illuminate\Support\Facades\Storage;
+
 class SuratController extends Controller
 {
     public function index(Request $request)
     {
-        if($request->has('cari')){
-            $surat=SuratModel::where('no_surat','LIKE','%'.$request->cari.'%')->get();
-        }else{
-            $surat=SuratModel::paginate(5);
-        }
+        // if($request->has('cari')){
+        //     $surat=SuratModel::where('no_surat','LIKE','%'.$request->cari.'%')->get();
+        // }else{
+        //     $surat=SuratModel::paginate(2);
+        // }
+        $cari = $request->cari;
+        $surat = SuratModel::where('no_surat','LIKE','%'.$request->cari.'%')
+        ->orwhere('id','LIKE','%'.$request->cari.'%')
+        ->paginate(5);
+        // $surat = SuratModel::all();
+
+        $total=SuratModel::count();
+
         
-        return view ('surat.index',['surat'=>$surat]);
+        return view ('surat.index',compact('surat','cari','total'));
     }
     public function create(Request $request)
     {
-        SuratModel::create($request->all());
+       $surat= SuratModel::create($request->all());
+        if($request->hasfile('foto')){
+            $request->file('foto')->move('images',$request->file('foto')->getClientOriginalName());
+            $surat->foto = $request->file('foto')->getClientOriginalName();
+          
+            $surat->save();
+        }
         
         return redirect('/surat')->with('success', 'Data Berhasil Tersimpan!');
     }
@@ -35,7 +54,7 @@ class SuratController extends Controller
         $surat=SuratModel::find($id);
         $surat->update($request->all());
         if($request->hasfile('foto')){
-            $request->file('foto','pdf')->move('images',$request->file('foto')->getClientOriginalName());
+            $request->file('foto')->move('images',$request->file('foto')->getClientOriginalName());
             $surat->foto = $request->file('foto')->getClientOriginalName();
           
             $surat->save();
@@ -69,6 +88,27 @@ class SuratController extends Controller
       return $pdf->download('data.pdf');
       
     }
-       
-    
+    public function searchBydate(Request $req)
+    {
+        $surat=SuratModel::where ('tanggal','>=', $req->from)
+        ->where ('tanggal','<=', $req->to)
+        ->get();
+        return view ('layanan',compact('surat'));
+        // dd($surat);
+    }
+    public function cetak()
+    {
+        return view('surat.cetak');
+    }
+    public function cetakpertanggal($tglawal,$tglakhir)
+    {
+        // dd(['tanggal awal :'.$tglawal, 'tanggal akhir :'.$tglakhir]);
+        $cetakpertanggal=SuratModel::whereBetween('tanggal',[$tglawal,$tglakhir])->get();
+        // return view('surat.cetaksuratpertanggal',compact('cetakpertanggal'));
+        // return view('surat.cetaksuratpertanggal',['cetakpertanggal'=>$cetakpertanggal]);
+        view()->share('cetakpertanggal', $cetakpertanggal);
+        $pdf = PDF::loadview('surat.cetaksuratpertanggal');
+        return $pdf->download('cetaksuratpertanggal.pdf');
+    }
+
 }

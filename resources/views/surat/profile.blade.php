@@ -14,21 +14,28 @@
                         <div class="profile-header">
                             <div class="overlay"></div>
                             <div class="">
-                                <img src="{{ asset('images/'.$surat->foto) }}" class=""  width="330" height="330" alt="foto">
-                                <h3 class="name">{{ $surat->foto }}</h3>
+
+                                <img src="{{ asset('images/'.$surat->foto) }}" alt="" width="280px" height="400px">
                                 {{-- <span class="online-status status-available">Available</span> --}}
                             </div>
+                            
+                            <div>
+                           
+                            </div>
+                           
                             <div class="profile-stat">
                                 <div class="row">
-                                    <div class="col-md-4 stat-item">
-                                        45 <span>Projects</span>
+                                    <div class="col-md-12 stat-item">
+                                        
+                                        No_Surat <span>{{ $surat->no_surat}} </span>
+                                        {{-- Memiliki <span>{{ $surat->ba->lampiran}} lampiran</span> --}}
                                     </div>
-                                    <div class="col-md-4 stat-item">
+                                    {{-- <div class="col-md-4 stat-item">
                                         15 <span>Awards</span>
                                     </div>
                                     <div class="col-md-4 stat-item">
                                         2174 <span>Points</span>
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </div>
                         </div>
@@ -36,16 +43,18 @@
                         <!-- PROFILE DETAIL -->
                         <div class="profile-detail">
                             <div class="profile-info">
-                                <h4 class="heading">Basic Info</h4>
+                                {{-- <h4 class="heading">StatusSurat</h4> --}}
                                 <ul class="list-unstyled list-justify">
-                                    <li>Birthdate <span>24 Aug, 2016</span></li>
-                                    <li>Mobile <span>(124) 823409234</span></li>
-                                    <li>Email <span>samuel@mydomain.com</span></li>
-                                   
+
                                 </ul>
                             </div>
-                            <div class="text-center"><a href="#" class="btn btn-primary">Edit Profile</a></div>
+                            <div class="text-center"><a href="/surat/{{ $surat->id }}/editsurat" class="btn btn-primary">EditFoto</a></div>
                         </div>
+                        {{-- <td ieu nu nyien lier teh>
+                            <a href="/surat/download/{{ $surat->foto }}">download</a>
+                        </td> --}}
+                        
+                        {{-- <td>{{ $surat->foto }}</td> --}}
                         <!-- END PROFILE DETAIL -->
                     </div>
                     <!-- END LEFT COLUMN -->
@@ -55,8 +64,8 @@
                         <!-- TABBED CONTENT -->
                         <div class="custom-tabs-line tabs-line-bottom left-aligned">
                             <ul class="nav" role="tablist">
-                                <li class="active"><a href="#tab-bottom-left1" role="tab" data-toggle="tab">Recent Activity</a></li>
-                                <li><a href="#tab-bottom-left2" role="tab" data-toggle="tab">Projects <span class="badge">7</span></a></li>
+                                <li class="active"><a href="/grafik" >KembaliKeDashboard</a></li>
+                                {{-- <li><a href="#tab-bottom-left2" role="tab" data-toggle="tab">Projects <span class="badge">7</span></a></li> --}}
                             </ul>
                         </div>
                        <!-- BORDERED TABLE -->
@@ -69,33 +78,24 @@
 										<thead>
 											<tr>
 												<th>No</th>
-												<th>Judul Surat</th>
-												<th>Total Lampiran</th>
-												<th>Pengirim</th>
-                                              
+												<th>StatusSL</th>
+                                                <th>Jumlah</th>
+												<th>StatusSL</th>
+                                                <th>Download</th>
 											</tr>
 										</thead>
-										<tbody>
-											<tr>
-												<td>1</td>
-												<td>Steve</td>
-												<td>Jobs</td>
-												<td>@steve</td>
-											</tr>
-											<tr>
-												<td>2</td>
-												<td>Simon</td>
-												<td>Philips</td>
-												<td>@simon</td>
-											</tr>
-											<tr>
-												<td>3</td>
-												<td>Jane</td>
-												<td>Doe</td>
-												<td>@jane</td>
-											</tr>
+                                        {{-- @foreach ($surat as $item) --}}
+                                    
+                                        <tr>
+                                            <td>1</td>
+                                            <td>{{ $surat->label }}</td>
+                                            <td>{{ $surat->jumlah }}</td>
+                                            <td>{{ $surat->keterangan }}</td>
+                                            <td>
+                                                <a href="{{ asset('images/'.$surat->foto) }}" class="btn-warning btn-xs fa fa-download" download=""></a>
+                                            </td>
                                            
-										</tbody>
+                                        </tr>
 									</table>
 								</div>
 							</div>
@@ -105,26 +105,26 @@
                                     <table class="table project-table">
                                         <thead>
                                             <tr>
-                                                <th>Title</th>
-                                                <th>Progress</th>
+                                                <th>KembaliKeSurat</th>
+                                                {{-- <th>Progress</th>
                                                 <th>Leader</th>
-                                                <th>Status</th>
+                                                <th>Status</th> --}}
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td><a href="#">Spot Media</a></td>
+                                                <td><a href="/surat">Kembali</a></td>
                                                 <td>
                                                     <div class="progress">
                                                         <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-                                                            <span>60% Complete</span>
+                                                            <span>{{ $surat->foto }}</span>
                                                         </div>
                                                     </div>
                                                 </td>
                                                 <td><img src="assets/img/user2.png" alt="Avatar" class="avatar img-circle"> <a href="#">Michael</a></td>
                                                 <td><span class="label label-success">ACTIVE</span></td>
                                             </tr>
-                                            <tr>
+                                            {{-- <tr>
                                                 <td><a href="#">E-Commerce Site</a></td>
                                                 <td>
                                                     <div class="progress">
@@ -135,8 +135,8 @@
                                                 </td>
                                                 <td><img src="assets/img/user1.png" alt="Avatar" class="avatar img-circle"> <a href="#">Antonius</a></td>
                                                 <td><span class="label label-warning">PENDING</span></td>
-                                            </tr>
-                                            <tr>
+                                            </tr> --}}
+                                            {{-- <tr>
                                                 <td><a href="#">Project 123GO</a></td>
                                                 <td>
                                                     <div class="progress">
@@ -147,9 +147,9 @@
                                                 </td>
                                                 <td><img src="assets/img/user1.png" alt="Avatar" class="avatar img-circle"> <a href="#">Antonius</a></td>
                                                 <td><span class="label label-success">ACTIVE</span></td>
-                                            </tr>
+                                            </tr> --}}
                                             <tr>
-                                                <td><a href="#">Wordpress Theme</a></td>
+                                                <td><a href="/surat">Wordpress Theme</a></td>
                                                 <td>
                                                     <div class="progress">
                                                         <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%;">

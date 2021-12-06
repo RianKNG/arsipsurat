@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-	<title>Dashboard | PVDR </title>
+
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -18,9 +18,7 @@
 	<link rel="stylesheet" href="{{ asset('admin/assets/css/demo.css') }}">
 	<!-- GOOGLE FONTS -->
 	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
-	<!-- ICONS -->
-	<link rel="apple-touch-icon" sizes="76x76" href="{{ asset('admin/assets/img/logo-dark.png') }}">
-	<link rel="icon" type="image/png" sizes="96x96" href="{{ asset('admin/assets/img/logo-dark.png') }}">
+
 </head>
 
 <body>
@@ -38,7 +36,7 @@
 		<div class="clearfix"></div>
 		<footer>
 			<div class="container-fluid">
-				<p class="copyright">Shared by <i class="fa fa-love"></i><a href="https://bootstrapthemes.co">BootstrapThemes</a>
+				<p class="copyright">Dibuat Oleh: <i class="fa fa-love"></i><a href="#">PVDR TEAM</a>
 </p>
 			</div>
 		</footer>
@@ -53,5 +51,5 @@
 	<script src="{{ asset('admin/assets/scripts/klorofil-common.js') }}"></script>
 
 </body>
-
+<marquee bgcolor="" align ="center" direction ="left" scrollamount="5" class="italic "><i font-weight: bold; class="text-primary">S e j a t i n y a &nbsp; &nbsp; &nbsp; T u k a n g l e d e n g &nbsp; &nbsp; &nbsp; S e j a t i !!! P V D R T E A M</marquee> 
 </html>
