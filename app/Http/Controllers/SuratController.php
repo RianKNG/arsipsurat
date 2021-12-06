@@ -4,11 +4,13 @@ namespace App\Http\Controllers;
 
 // use Barryvdh\DomPDF\PDF;
 use PDF;
-
-
-
 use App\Models\SuratModel;
+
+
+
+use App\Exports\SuratExport;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Support\Facades\Storage;
 
 class SuratController extends Controller
@@ -109,6 +111,12 @@ class SuratController extends Controller
         view()->share('cetakpertanggal', $cetakpertanggal);
         $pdf = PDF::loadview('surat.cetaksuratpertanggal');
         return $pdf->download('cetaksuratpertanggal.pdf');
+    }
+    public function exportexel()
+    {
+    
+        return Excel::download(new SuratExport, 'surat.xlsx');
+          
     }
 
 }

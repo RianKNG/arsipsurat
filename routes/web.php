@@ -54,6 +54,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/surat/{id}/hapussurat',[SuratController::class,'delete']);
     Route::get('/surat/{id}/profile',[SuratController::class,'profile']);
     Route::get('/exportpdf',[SuratController::class,'exportpdf']);
+    Route::get('/exportexel',[SuratController::class,'exportexel']);
     Route::get('/ba',[BaController::class,'index']);
     Route::get('/ba/{id}/hapusba',[BaController::class,'delete']);
     Route::post('/surat',[SuratController::class,'searchBydate']);
