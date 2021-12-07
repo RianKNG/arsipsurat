@@ -27,7 +27,7 @@ class BaController extends Controller
             $ba-> pdf = $request->file('pdf')->getClientOriginalName();
             $ba->save();
         }
-        
+        dd($ba);
         return redirect('/ba')->with('success', 'Data Berhasil Tersimpan!');
     }
     public function delete($id)
