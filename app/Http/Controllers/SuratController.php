@@ -22,8 +22,13 @@ class SuratController extends Controller
         // }
         $cari = $request->cari;
         $surat = SuratModel::where('no_surat','LIKE','%'.$request->cari.'%')
+<<<<<<< Updated upstream
         ->orwhere('id','LIKE','%'.$request->cari.'%')
         ->paginate(5);
+=======
+        ->orWhere('id','LIKE','%'.$request->cari.'%')
+        ->paginate(2);
+>>>>>>> Stashed changes
         // $surat = SuratModel::all();
 
         $total=SuratModel::count();
