@@ -71,7 +71,7 @@
                        <!-- BORDERED TABLE -->
 							<div class="panel">
 								<div class="panel-heading">
-									<h3 class="panel-title">Bordered Table</h3>
+									<h3 class="panel-title">TabelRinci</h3>
 								</div>
 								<div class="panel-body">
 									<table class="table table-bordered">
@@ -79,24 +79,28 @@
 											<tr>
 												<th>No</th>
 												<th>StatusSL</th>
-                                                <th>Jumlah</th>
-												<th>StatusSL</th>
+                                                <th>StsSR</th>
+                                                <th>Tanggal</th>
                                                 <th>Download</th>
 											</tr>
+                                            
 										</thead>
+                                        
                                         {{-- @foreach ($surat as $item) --}}
                                     
                                         <tr>
                                             <td>1</td>
                                             <td>{{ $surat->label }}</td>
-                                            <td>{{ $surat->jumlah }}</td>
-                                            <td>{{ $surat->keterangan }}</td>
+                                            <td>{{ $surat->status_surat }}</td>
+                                            <td>{{ $surat->tanggal }}</td>
                                             <td>
                                                 <a href="{{ asset('images/'.$surat->foto) }}" class="btn-warning btn-xs fa fa-download" download=""></a>
                                             </td>
                                            
                                         </tr>
 									</table>
+                                    <h5><b class="text-danger">Keterangan  :   <td>{{ $surat->keterangan }}</td> </b></h5>
+                                    
 								</div>
 							</div>
 							<!-- END BORDERED TABLE -->

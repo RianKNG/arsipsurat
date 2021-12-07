@@ -48,17 +48,12 @@
                                     </button>
                                     </div>
                                     <div class="modal-body">
-<<<<<<< Updated upstream
                                         <form action="/surat/tambahsurat" method="POST">
                                             @csrf
                                             <div class="mb-3">
                                                 <label for="exampleInputEmail1" class="form-label">UniqId</label>
                                                 <input type="integer" name="id" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                                                 </div>
-=======
-                                        <form action="/surat/tambahsurat" method=post>
-                                            @csrf                                         
->>>>>>> Stashed changes
                                               <div class="mb-3">
                                                   
                                             <label for="exampleInputEmail1" class="form-label mb-3">NoSurat</label>
@@ -70,18 +65,10 @@
                                                 <option value="Masuk">Masuk</option>
                                                 <option value="Keluar">Keluar</option>
                                             </select>
-<<<<<<< Updated upstream
                                         </div><br>
-
+                                        <div>           
                                         <select class="form-select form-select-lg mb-3" name="pengirim" aria-label=".form-select-lg example">
                                                         <option selected>PengirimCab</option>
-=======
-                                              
-                                          
-                                           
-                                                    <select class="form-select form-select-lg mb-3" name="pengirim" aria-label=".form-select-lg example">
-                                                        <option selected>Pengirim</option>
->>>>>>> Stashed changes
                                                         <option value="Tomo">Tomo</option>
                                                         <option value="Cimanggung">Cimanggung</option>
                                                         <option value="Paseh">Paseh</option>
@@ -92,12 +79,18 @@
                                                         <option value="Sumedang Selatan">Sumedang Selatan</option>
                                                         <option value="Jatinangor">Jatinangor</option>
                                         </select>
+                                    </div><br>
+                                        <select class="col-mb-12" name="label" aria-label=".form-select-lg example">
+                                            <option selected>SatusSL</option>
+                                            <option value="Baru">Baru</option>
+                                            <option value="Tutup">Tutup</option>
+                                            <option value="Ganti">Ganti</option>
+                                            <option value="Sambung">Sambung</option>
+                                            <option value="Mundur">Mundur</option>
+                                        </select><br>
+                                        
                                         <div class="mb-3">
-                                            <label for="exampleInputEmail1" class="form-label">Label</label>
-                                            <input type="text" name="label" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="exampleInputEmail1" class="form-label">Jumlah</label>
+                                            <label for="exampleInputEmail1" class="form-label">JumlahSL</label>
                                             <input type="integer" name="jumlah" class="form-control"  aria-describedby="emailHelp">
                                         </div>
                                         
@@ -128,30 +121,19 @@
                             <table class="table table-hover">
                                 <thead>
                                     <tr>
-<<<<<<< Updated upstream
                                         <th>No</th>
                                         <th  bgcolor='	danger' align='center' width="6px">unikId</th>
                                         <th width="200px" >NoSurat</th>
-                                        <th>StSur</th>
                                         <th>Cabang</th>
+                                        <th>St(SL)</th>
+                                        <th>JML</th>
+                                    
                                         {{-- <th>Label</th> --}}
                                         {{-- // umpetin --}}
                                          {{-- <th>Jml</th> --}}
                                          <th>Foto</th>
                                          {{-- <th>Tanggal</th>
                                         <th>Ket</th> --}}
-=======
-                                        {{-- <th>No</th> --}}
-                                        <th>Id</th>
-                                        <th >NoSurat</th>
-                                        <th>StatusSurat</th>
-                                       
-                                       
-                                        <th>Pengirim</th>
-                                       
-                                        <th>Tanggal</th>
-                                        <th>Keterangan</th>
->>>>>>> Stashed changes
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
@@ -167,24 +149,17 @@
                                         <td><a href="/surat/{{ $srt->id }}/profile">{{ $srt->id }}</a></td>
                                         <td><a href="/surat/{{ $srt->id }}/profile">{{ $srt->no_surat }}</a></td>
                                         <td>{{ $srt->status_surat }}</td>
-<<<<<<< Updated upstream
+
                                         <td>{{ $srt->pengirim }}</td>
+                                        <td>{{ $srt->label }}</td>
+                                        <td>{{ $srt->jumlah }}</td>
+                                       
                                         {{-- <td>{{ $srt->label }}</td> --}}
                                         {{-- <td>{{ $srt->jumlah}}</td> --}}
                                         <td>{{ $srt->foto }}<a href="{{ asset('images/'.$srt->foto) }}" alt="">&nbsp; &nbsp;<i class="fa fa-eye"></i></a></td>
                                         {{-- <td>{{ $srt->tanggal }}</td>
                                         <td>{{ $srt->keterangan }}</td> --}}
                                       
-=======
-                                        {{-- <td>{{ $srt->ba->id}}</td> --}}
-                                        {{-- <td>{{ $srt->ba->kode}}</td> --}}
-                                       
-                                        <td>{{ $srt->pengirim }}</td>
-                                        {{-- <td>{{ $srt->ba->lampiran }}</td> --}}
-                                        <td>{{ $srt->tanggal }}</td>
-                                        <td>{{ $srt->keterangan }}</td>
-                                        <td>{{ $srt->foto }}</td>
->>>>>>> Stashed changes
                                         <td>
                                             <a href="/surat/{{ $srt->id }}/editsurat" class="btn-warning btn-xs fa fa-edit"></a>
                                             <a href="/surat/{{ $srt->id }}/hapussurat" class="btn-danger btn-xs fa fa-trash"></a>
@@ -194,6 +169,7 @@
                                     @endforeach
                                 </tbody>
                             </table>
+                            
                             {{ $surat->links() }}
                             {{-- {{ $surat->links() }} --}}
                         </div>
