@@ -29,7 +29,8 @@
                                 </form>
                               </nav> --}}
 
-                        <form class="navbar-form navbar-left" method="GET" action="/surat" enctype="multipart/form-data">
+                        <form class="navbar-form navbar-left" method="GET" action="/surat">
+                        {{-- <form class="navbar-form navbar-left" method="GET" action="/surat"> --}}
                             <div class="input-group">
                                 <input type="text" name="cari" value="{{ $cari }}" class="form-control btn-xs" placeholder="SiahkanKetikanRefCari...">
                                 <span class="input-group-btn"><button type="submit" class="btn btn-success"><i class="fa fa-search">CariBoskuh</i></button></span>
@@ -69,6 +70,7 @@
                                         <select class="form-select form-select-lg mb-3" name="pengirim" aria-label=".form-select-lg example">
                                                         <option selected>PengirimCab</option>
                                                         <option value="Tomo">Tomo</option>
+                                                        <option value="Cimanggung">Cimanggung</option>
                                                         <option value="Paseh">Paseh</option>
                                                         <option value="Cimalaka">Cimalaka</option>
                                                         <option value="Tanjungkerta">Tanjungkerta</option>
@@ -145,6 +147,7 @@
                                         <td>{{ $srt->foto }}<a href="{{ asset('images/'.$srt->foto) }}" alt="">&nbsp; &nbsp;<i class="fa fa-eye"></i></a></td>
                                         {{-- <td>{{ $srt->tanggal }}</td>
                                         <td>{{ $srt->keterangan }}</td> --}}
+                                      
                                         <td>
                                             <a href="/surat/{{ $srt->id }}/editsurat" class="btn-warning btn-xs fa fa-edit"></a>
                                             <a href="/surat/{{ $srt->id }}/hapussurat" class="btn-danger btn-xs fa fa-trash"></a>

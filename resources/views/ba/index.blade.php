@@ -40,14 +40,16 @@
                                                 <input type="integer" name="surat_id" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                                                 </div>
                                          
-                                            {{-- <div class="mb-3">
-                                                <label for="exampleInputEmail1" class="form-label">Kode</label>
-                                                <input type="integer" name="kode" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                                                </div> --}}
+                                           
                                                 <div class="mb-3">
                                                     <label for="exampleInputEmail1" class="form-label">Lampiran</label>
                                                     <input type="text" name="lampiran" class="form-control" >
                                                     </div>
+                                                    <div class="mb-3">
+                                                        <label for="exampleInputEmail1" class="form-label">Jenis</label>
+                                                        <input type="text" name="jenis" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                                        </div>
+                                                        
                                             
                                                 <div class="mb-3">
                                                     <label for="exampleInputEmail1" class="form-label">pdf</label>
@@ -73,7 +75,7 @@
                                         
                                         {{-- <th>Id</th> --}}
                                         <th  bgcolor='	#8FBC8F' align='center' width="6px">SuratId</th>
-                                        <th>Kode</th>
+                                      
                                         <th>Pengirim</th>
                                         <th>Lampiran</th>
                                         <th>Pdf</th>
@@ -93,12 +95,9 @@
                                         {{-- <td><a href="/surat/{{ $baa->id }}/profile">{{ $baa->no_surat }}</a></td> --}}
                                         {{-- <td>{{ $baa->id }}</td> --}}
                                         <td>{{ $baa->surat_id }}</td>
-                                        <td>{{ $baa->kode }}</td>
-                                        
                                       
-                                        
-                                      
-                                        <td>{{ $baa->surat->foto}}</td>
+                                        <td>{{ $baa->surat->pengirim }}</td>
+                                        {{-- <td>{{ $baa->surat->foto}}</td> --}}
                                         <td>{{ $baa->lampiran }}</td>
                                         <td>{{ $baa->pdf }}<a href="{{ asset('images/'.$baa->pdf) }}" alt=""><i class="fa fa-download"></i></a></td>
                                         <td>
