@@ -29,7 +29,7 @@
                                 </form>
                               </nav> --}}
 
-                        <form class="navbar-form navbar-left" method="GET" action="/surat" enctype="multipart/form-data">
+                        <form class="navbar-form navbar-left" method="GET" action="/surat">
                             <div class="input-group">
                                 <input type="text" name="cari" value="{{ $cari }}" class="form-control btn-xs" placeholder="SiahkanKetikanRefCari...">
                                 <span class="input-group-btn"><button type="submit" class="btn btn-success"><i class="fa fa-search">CariBoskuh</i></button></span>
@@ -41,20 +41,32 @@
                                 <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
+                                        {{-- @if ($errors->any())
+                                            <div class="alert alert-danger">
+                                                <ul>
+                                                    @foreach ($errors->all() as $error)
+                                                        <li>{{ $error }}</li>
+                                                    @endforeach
+                                                </ul>
+                                            </div>
+                                        @endif --}}
                                     <h5 class="modal-title" id="exampleModalLabel">TambahDataSurat</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                     </div>
                                     <div class="modal-body">
-                                        <form action="/surat/tambahsurat" method="POST">
+                                        <form action="/surat/tambahsurat" method="POST" enctype="multipart/form-data">
                                             @csrf
                                             <div class="mb-3">
                                                 <label for="exampleInputEmail1" class="form-label">UniqId</label>
                                                 <input type="integer" name="id" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                                                </div>
-                                              <div class="mb-3">
-                                                  
+                                                @if ($errors->has('no_surat'))
+                                                <span class="help-block">{{ $errors->first('no_surat') }}</span>
+                                                    
+                                                @endif
+                                            </div>
+                                              <div class="mb-3 form-group{{ $errors->has('no_surat') ?'has-error':'' }}"> 
                                             <label for="exampleInputEmail1" class="form-label mb-3">NoSurat</label>
                                             <input type="text" name="no_surat" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                                             </div><br>
@@ -103,6 +115,10 @@
                                             <div class="mb-3">
                                                 <label for="exampleInputEmail1" class="form-label">Foto</label>
                                                 <input type="file" name="foto"class="form-control"  aria-describedby="emailHelp">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="exampleInputEmail1" class="form-label">Pdf</label>
+                                                <input type="file" name="pdf"class="form-control"  aria-describedby="emailHelp">
                                             </div>
                                             
                                     </div>
@@ -154,7 +170,9 @@
                                         {{-- <td>{{ $srt->jumlah}}</td> --}}
                                         <td>{{ $srt->foto }}<a href="{{ asset('images/'.$srt->foto) }}" alt="">&nbsp; &nbsp;<i class="fa fa-eye"></i></a></td>
                                         {{-- <td>{{ $srt->tanggal }}</td>
+                                       
                                         <td>{{ $srt->keterangan }}</td> --}}
+                                        <td>{{ $srt->pdf }}</td>
                                         <td>
                                             <a href="/surat/{{ $srt->id }}/editsurat" class="btn-warning btn-xs fa fa-edit"></a>
                                             <a href="/surat/{{ $srt->id }}/hapussurat" class="btn-danger btn-xs fa fa-trash"></a>

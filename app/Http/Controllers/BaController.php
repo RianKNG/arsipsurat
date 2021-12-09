@@ -20,16 +20,19 @@ class BaController extends Controller
         
     }
     public function create(Request $request)
-    {
-        $ba=Ba::create($request->all());
-        if($request->hasFile('pdf')){
-            $request->file('pdf')->move('images',$request->file('pdf')->getClientOriginalName());
-            $ba-> pdf = $request->file('pdf')->getClientOriginalName();
-            $ba->save();
-        }
+        {
+            $ba = Ba::create($request->all());
         
-        return redirect('/ba')->with('success', 'Data Berhasil Tersimpan!');
-    }
+            // $ba->update($request->all());
+            if($request->hasFile('pdf')){
+                $request->file('pdf')->move('images/',$request->file('pdf')->getClientOriginalName());
+                $ba->pdf = $request->file('pdf')->getClientOriginalName();
+              
+                $ba->save();
+            }
+    
+            return redirect ('/ba')->with('sukses','Data Berhasil Diubah')->with('success', 'Data Berhasil Diupdate!');
+        }
     public function delete($id)
     {
         $ba=Ba::find($id);

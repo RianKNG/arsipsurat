@@ -23,6 +23,7 @@ class CreateSuratTable extends Migration
             $table->date('tanggal');
             $table->text('keterangan')->nullable();
             $table->string('foto');
+            $table->string('pdf');
             $table->timestamps();
         });
     }
