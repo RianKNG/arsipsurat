@@ -30,10 +30,6 @@
                               </nav> --}}
 
                         <form class="navbar-form navbar-left" method="GET" action="/surat">
-<<<<<<< HEAD
-=======
-                        {{-- <form class="navbar-form navbar-left" method="GET" action="/surat"> --}}
->>>>>>> 71f1dfee84977f710cd4b635c8c2e6adf736a5c5
                             <div class="input-group">
                                 <input type="text" name="cari" value="{{ $cari }}" class="form-control btn-xs" placeholder="SiahkanKetikanRefCari...">
                                 <span class="input-group-btn"><button type="submit" class="btn btn-success"><i class="fa fa-search">CariBoskuh</i></button></span>
