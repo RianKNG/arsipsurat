@@ -7,7 +7,7 @@
                     <a href="#subPages" data-toggle="collapse" class="collapsed"><i class="lnr lnr-users"></i> <span>HalamanAdmin</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
                     <div id="subPages" class="collapse ">
                         <ul class="nav">
-                            <li><a href="page-profile.html" class="">Profile</a></li>
+                            <li><a href="/users" class="">Profile</a></li>
                             <li><a href="page-login.html" class="">Login</a></li>
                             <li><a href="page-lockscreen.html" class="">Lockscreen</a></li>
                         </ul>

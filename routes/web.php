@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BaController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UsersController;
 use App\Http\Controllers\SuratController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\LayananController;
@@ -47,6 +48,7 @@ Route::middleware(['auth'])->group(function () {
         return view('grafik',compact('total','total1','total2','total3','total4','total5','total6','total7'));
         
     });
+    Route::get('/users',[UsersController::class,'index']);
     Route::get('/surat',[SuratController::class,'index']);
     Route::post('/surat/tambahsurat',[SuratController::class,'create']);
     Route::get('/surat/{id}/editsurat',[SuratController::class,'edit']);

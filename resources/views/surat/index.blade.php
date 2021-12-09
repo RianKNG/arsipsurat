@@ -175,11 +175,7 @@
                                         {{-- <td>{{ $srt->tanggal }}</td>
                                        
                                         <td>{{ $srt->keterangan }}</td> --}}
-<<<<<<< HEAD
                                         <td>{{ $srt->pdf }}</td>
-=======
-                                      
->>>>>>> 71f1dfee84977f710cd4b635c8c2e6adf736a5c5
                                         <td>
                                             <a href="/surat/{{ $srt->id }}/editsurat" class="btn-warning btn-xs fa fa-edit"></a>
                                             <a href="/surat/{{ $srt->id }}/hapussurat" class="btn-danger btn-xs fa fa-trash"></a>
