@@ -30,6 +30,10 @@
                               </nav> --}}
 
                         <form class="navbar-form navbar-left" method="GET" action="/surat">
+<<<<<<< HEAD
+=======
+                        {{-- <form class="navbar-form navbar-left" method="GET" action="/surat"> --}}
+>>>>>>> 71f1dfee84977f710cd4b635c8c2e6adf736a5c5
                             <div class="input-group">
                                 <input type="text" name="cari" value="{{ $cari }}" class="form-control btn-xs" placeholder="SiahkanKetikanRefCari...">
                                 <span class="input-group-btn"><button type="submit" class="btn btn-success"><i class="fa fa-search">CariBoskuh</i></button></span>
@@ -81,6 +85,7 @@
                                         <select class="form-select form-select-lg mb-3" name="pengirim" aria-label=".form-select-lg example">
                                                         <option selected>PengirimCab</option>
                                                         <option value="Tomo">Tomo</option>
+                                                        <option value="Cimanggung">Cimanggung</option>
                                                         <option value="Paseh">Paseh</option>
                                                         <option value="Cimalaka">Cimalaka</option>
                                                         <option value="Tanjungkerta">Tanjungkerta</option>
@@ -162,6 +167,8 @@
                                         {{-- <td>{{ $srt->id }}</td> --}}
                                         <td><a href="/surat/{{ $srt->id }}/profile">{{ $srt->id }}</a></td>
                                         <td><a href="/surat/{{ $srt->id }}/profile">{{ $srt->no_surat }}</a></td>
+                                        <td>{{ $srt->status_surat }}</td>
+
                                         <td>{{ $srt->pengirim }}</td>
                                         <td>{{ $srt->label }}</td>
                                         <td>{{ $srt->jumlah }}</td>
@@ -172,7 +179,11 @@
                                         {{-- <td>{{ $srt->tanggal }}</td>
                                        
                                         <td>{{ $srt->keterangan }}</td> --}}
+<<<<<<< HEAD
                                         <td>{{ $srt->pdf }}</td>
+=======
+                                      
+>>>>>>> 71f1dfee84977f710cd4b635c8c2e6adf736a5c5
                                         <td>
                                             <a href="/surat/{{ $srt->id }}/editsurat" class="btn-warning btn-xs fa fa-edit"></a>
                                             <a href="/surat/{{ $srt->id }}/hapussurat" class="btn-danger btn-xs fa fa-trash"></a>
@@ -184,6 +195,7 @@
                             </table>
                             
                             {{ $surat->links() }}
+                            {{-- {{ $surat->links() }} --}}
                         </div>
                         @include('sweetalert::alert')
                     </div>
