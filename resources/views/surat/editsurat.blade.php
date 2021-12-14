@@ -23,9 +23,9 @@
                                   </select>
                                   <select class="form-select form-select-lg mb-3" name="pengirim" aria-label=".form-select-lg example">
                                     <option selected>Cabang</option>
-                                    <option value="Tomo" @if($surat->pengirim == "Tomo") selected @endif>Tomo</option>
-                                    <option value="Paseh" @if($surat->pengirim == "Paseh") selected @endif>Paseh</option>
-                                    <option value="Cimanggung" @if($surat->pengirim == "Cimanggung") selected @endif>Cimanggung</option>
+                                    <option value="Tom" @if($surat->pengirim == "Tom") selected @endif>Tomo</option>
+                                    <option value="Pas" @if($surat->pengirim == "Pas") selected @endif>Paseh</option>
+                                    <option value="Cim" @if($surat->pengirim == "Cim") selected @endif>Cimanggung</option>
                                   </select>
                                   <div class="mb-3">
                                     <label for="exampleInputEmail1" class="form-label">Tanggal</label>
