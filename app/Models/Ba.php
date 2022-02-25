@@ -9,7 +9,7 @@ class Ba extends Model
 {
     use HasFactory;
     protected $table='ba';
-    protected $fillable=['id','surat_id','jenis','lampiran','pdf'];
+    protected $fillable=['id','surat_id','jenis','lampiran'];
     protected $primariKey=null;
     public $incrementing =false;
     
@@ -19,6 +19,12 @@ class Ba extends Model
         return $this->belongsTo(SuratModel::class);
         
     }
-  
+    public function JumlahSatuan()
+    {
+      
+   
+      return 'berkas';
+        
+      }
 
 }

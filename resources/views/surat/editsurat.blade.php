@@ -18,14 +18,14 @@
                                 </div>
                                 <select class="form-select form-select-lg mb-3" name="status_surat" aria-label=".form-select-lg example">
                                     <option selected>statusSurat</option>
-                                    <option value="M" @if($surat->status_surat == "M") selected @endif>Masuk</option>
-                                    <option value="K" @if($surat->status_surat == "K") selected @endif>Keluar</option>
+                                    <option value="Masuk" @if($surat->status_surat == "Masuk") selected @endif>Masuk</option>
+                                    <option value="Keluar" @if($surat->status_surat == "Keluar") selected @endif>Keluar</option>
                                   </select>
                                   <select class="form-select form-select-lg mb-3" name="pengirim" aria-label=".form-select-lg example">
                                     <option selected>Cabang</option>
-                                    <option value="T" @if($surat->pengirim == "T") selected @endif>Tomo</option>
-                                    <option value="P" @if($surat->pengirim == "P") selected @endif>Paseh</option>
-                                    <option value="C" @if($surat->pengirim == "C") selected @endif>Cimanggung</option>
+                                    <option value="Tomo" @if($surat->pengirim == "Tomo") selected @endif>Tomo</option>
+                                    <option value="Paseh" @if($surat->pengirim == "Paseh") selected @endif>Paseh</option>
+                                    <option value="Cimanggung" @if($surat->pengirim == "Cimanggung") selected @endif>Cimanggung</option>
                                   </select>
                                   <div class="mb-3">
                                     <label for="exampleInputEmail1" class="form-label">Tanggal</label>
@@ -38,6 +38,10 @@
                                   <div class="mb-3">
                                     <label for="exampleInputEmail1" class="form-label">foto</label>
                                     <input type="file" name="foto" value="{{ $surat->foto }}"class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                  </div> 
+                                  <div class="mb-3">
+                                    <label for="exampleInputEmail1" class="form-label">Pdf</label>
+                                    <input type="file" name="pdf" value="{{ $surat->foto }}"class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                                   </div> 
                         </div>
                         <div>

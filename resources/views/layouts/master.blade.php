@@ -36,7 +36,7 @@
 		<div class="clearfix"></div>
 		<footer>
 			<div class="container-fluid">
-				<p class="copyright">Dibuat Oleh: <i class="fa fa-love"></i><a href="#">PVDR TEAM</a>
+				<p class="copyright">Dibuat Oleh: <i class="fa fa-love"></i><a href="#">PVDR TEAM<img src="{{ asset('admin/assets/img/logo-dark4.jpg') }}"width="50" height="30"alt=""></a>
 </p>
 			</div>
 		</footer>
