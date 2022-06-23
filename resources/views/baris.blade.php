@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>TEST</title>
+  <title>Bar Chart in Laravel 8 - Online Web Tutor</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -11,9 +11,9 @@
 <body>
 
 <div class="container">
-  <h2 style="text-align:center;">TEST</h2>
+  <h2 style="text-align:center;">Bar Chart in Laravel 8 - Online Web Tutor</h2>
   <div class="panel panel-primary">
-    <div class="panel-heading">GRAFIK BUAH BUAHAN</div>
+    <div class="panel-heading">Bar Chart in Laravel 8</div>
     <div class="panel-body">
         <div id="bar-chart"></div>
     </div>
@@ -26,24 +26,22 @@
 <script src="https://code.highcharts.com/modules/accessibility.js"></script>
 
 <script>
-    $label = ["Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember"];
     $(function(){
         Highcharts.chart('bar-chart', {
             chart: {
                 type: 'column'
             },
             title: {
-                text: 'TEST IPANG'
+                text: 'Student Term Wise Marks'
             },
             xAxis: {
-                // categories: <?= $xxx ?>,
-                
+                categories: <?= $kubikasis ?>,
                 crosshair: true
             },
             yAxis: {
                 min: 0,
                 title: {
-                    text: 'interval Boss'
+                    text: 'Marks'
                 }
             },
             tooltip: {
@@ -60,8 +58,7 @@
                     borderWidth: 0
                 }
             },
-            series: <?= $data?>
-          
+            series: <?= $data ?>
         });
     });
 </script>

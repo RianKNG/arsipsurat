@@ -9,6 +9,8 @@
 	<script type="text/javascript" src="{{asset('assets/js/jquery.min.js')}}"></script>
 	<script type="text/javascript" src="{{asset('assets/js/bootstrap.bundle.min.js')}}"></script>	
 	<script type="text/javascript" src="{{asset('assets/js/echarts.min.js')}}"></script>	
+    
+    
 </head>
 <body>
 <div class="col-md-12">
@@ -63,7 +65,7 @@ if (pie_basic_element) {
             orient: 'horizontal',
             bottom: '0%',
             left: 'center',                   
-            data: ['buah', 'sayuran'],
+            data: ['buah', 'sayuran','hewan'],
             itemHeight: 8,
             itemWidth: 8
         },
@@ -80,8 +82,13 @@ if (pie_basic_element) {
                 }
             },
             data: [
+               
                 {value: {{$apel_count}}, name: 'buah'},
                 {value: {{$bayam_count}}, name: 'sayuran'},
+                {value: {{$jambu_count}}, name: 'hewan'},
+                // {value: {{$apel_count}}, name: 'buah'},
+                // {value: {{$bayam_count}}, name: 'sayuran'},
+                // {value: {{$jambu_count}}, name: 'hewan'},
                
             ]
         }]
