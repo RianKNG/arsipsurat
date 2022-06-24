@@ -37,13 +37,13 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::middleware(['auth'])->group(function () {
     Route::get('/grafik', function () {
         $total=SuratModel::count();
-        $total1=SuratModel::where('label','ganti')->count();
-        $total2=SuratModel::where('label','sambung')->count();
-        $total3=SuratModel::where('label','tutup')->count();
-        $total4=SuratModel::where('label','baru')->count();
-        $total5=SuratModel::where('label','baru')->count();
-        $total6=SuratModel::where('status_surat','masuk')->count();
-        $total7=SuratModel::where('status_surat','keluar')->count();
+        $total1=SuratModel::where('label','Baru')->count();
+        $total2=SuratModel::where('label','Sambung')->count();
+        $total3=SuratModel::where('label','Ganti')->count();
+        $total4=SuratModel::where('label','Tutup')->count();
+        $total5=SuratModel::where('label','Bbn')->count();
+        $total6=SuratModel::where('status_surat','Masuk')->count();
+        $total7=SuratModel::where('status_surat','Keluar')->count();
     
         return view('grafik',compact('total','total1','total2','total3','total4','total5','total6','total7'));
         
