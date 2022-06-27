@@ -7,7 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Cabang extends Model
 {
-    use HasFactory;
+    // use HasFactory;
 
-    public $timestamps = false;
+    // public $timestamps = false;
+    protected $table ='products';
+    protected $guarded =[];
 }
