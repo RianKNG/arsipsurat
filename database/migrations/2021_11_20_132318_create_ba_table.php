@@ -18,7 +18,6 @@ class CreateBaTable extends Migration
             $table->unsignedBigInteger('surat_id');
             $table->foreign('surat_id')->references('id')->on('surat');
             $table->integer('lampiran');
-            $table->string('pdf');
             $table->timestamps();
         });
     }

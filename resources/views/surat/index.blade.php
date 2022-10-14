@@ -29,62 +29,116 @@
                                 </form>
                               </nav> --}}
 
-                        <form class="navbar-form navbar-left" method="GET" action="/surat" enctype="multipart/form-data">
-                            <div class="input-group">
-                                <input type="text" name="cari" value="{{ $cari }}" class="form-control btn-xs" placeholder="SiahkanKetikanRefCari...">
-                                <span class="input-group-btn"><button type="submit" class="btn btn-success"><i class="fa fa-search">CariBoskuh</i></button></span>
-                            </div>
-                        </form>
+                              <form class="navbar-form navbar-left" method="GET" action="/surat" enctype="multipart/form-data">
+                                <div class="input-group">
+                                    <input type="text" name="cari" value="{{ $cari }}" class="form-control btn-xs" placeholder="SiahkanKetikanRefCari...">
+                                    <span class="input-group-btn"><button type="submit" class="btn btn-success"><i class="fa fa-search">CariBoskuh</i></button></span>
+                                </div>
+                            </form>
 
                             <!-- Modal -->
                             <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
+                                        {{-- @if ($errors->any())
+                                            <div class="alert alert-danger">
+                                                <ul>
+                                                    @foreach ($errors->all() as $error)
+                                                        <li>{{ $error }}</li>
+                                                    @endforeach
+                                                </ul>
+                                            </div>
+                                        @endif --}}
                                     <h5 class="modal-title" id="exampleModalLabel">TambahDataSurat</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                     </div>
                                     <div class="modal-body">
-                                        <form action="/surat/tambahsurat" method="POST">
+                                        <form action="/surat/tambahsurat" method="POST" enctype="multipart/form-data">
                                             @csrf
                                             <div class="mb-3">
                                                 <label for="exampleInputEmail1" class="form-label">UniqId</label>
                                                 <input type="integer" name="id" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                                                </div>
-                                              <div class="mb-3">
-                                                  
+                                                @if ($errors->has('no_surat'))
+                                                <span class="help-block">{{ $errors->first('no_surat') }}</span>
+                                                    
+                                                @endif
+                                            </div>
+                                              <div class="mb-3 form-group{{ $errors->has('no_surat') ?'has-error':'' }}"> 
                                             <label for="exampleInputEmail1" class="form-label mb-3">NoSurat</label>
                                             <input type="text" name="no_surat" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                                            </div><br>
+                                            </div>
                                             <div>
                                             <select class="col-mb-12" name="status_surat" aria-label=".form-select-lg example">
-                                                <option selected>statusSurat</option>
+                                                <label for="exampleInputEmail1" class="form-label">JumlahSL</label>
+                                                <option selected>statusSurat
+                                                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;   
+                                                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
+                                                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
+                                                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
+                                                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
+                                                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
+                                                    &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+                                                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;   
+                                                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
+                                                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;   
+                                                   
+                                                   
+                                                </option>
                                                 <option value="Masuk">Masuk</option>
                                                 <option value="Keluar">Keluar</option>
                                             </select>
                                         </div><br>
                                         <div>           
                                         <select class="form-select form-select-lg mb-3" name="pengirim" aria-label=".form-select-lg example">
-                                                        <option selected>PengirimCab</option>
-                                                        <option value="Tomo">Tomo</option>
-                                                        <option value="Paseh">Paseh</option>
-                                                        <option value="Cimalaka">Cimalaka</option>
-                                                        <option value="Tanjungkerta">Tanjungkerta</option>
-                                                        <option value="Situraja">Situraja</option>
-                                                        <option value="Wado">Wado</option>
-                                                        <option value="Sumedang Selatan">Sumedang Selatan</option>
-                                                        <option value="Jatinangor">Jatinangor</option>
+                                                        <option selected>PengirimCab
+                                                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;   
+                                                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
+                                                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
+                                                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
+                                                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
+                                                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
+                                                            &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+                                                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;   
+                                                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
+                                                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;  
+                                                        </option>
+                                                        <option value="Tom">Tomo</option>
+                                                        <option value="Cim">Cimanggung</option>
+                                                        <option value="Pas">Paseh</option>
+                                                        <option value="Cim">Cimalaka</option>
+                                                        <option value="Tanj">Tanjungkerta</option>
+                                                        <option value="Sit">Situraja</option>
+                                                        <option value="Wad">Wado</option>
+                                                        <option value="SS">Sumedang Selatan</option>
+                                                        <option value="JTN">Jatinangor</option>
                                         </select>
                                     </div><br>
                                         <select class="col-mb-12" name="label" aria-label=".form-select-lg example">
-                                            <option selected>SatusSL</option>
+                                            <option selected >SatusSL
+                                                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;   
+                                                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
+                                                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
+                                                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
+                                                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
+                                                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
+                                                &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+                                                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;   
+                                                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
+                                                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;   
+                                                &nbsp; &nbsp; &nbsp; &nbsp;
+                                                
+                                          
+                                            </option>
                                             <option value="Baru">Baru</option>
                                             <option value="Tutup">Tutup</option>
                                             <option value="Ganti">Ganti</option>
                                             <option value="Sambung">Sambung</option>
                                             <option value="Mundur">Mundur</option>
+                                              <option value="Bbn">Bbn</option>
+                                              <option value="RubahGolongan">Rubah Golongan</option>
                                         </select><br>
                                         
                                         <div class="mb-3">
@@ -97,12 +151,17 @@
                                                 <input type="date" name="tanggal" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                                             </div>
                                             <div class="form-floating">
-                                                <textarea class="form-control" name="keterangan" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
                                                 <label for="floatingTextarea2">Keterangan</label>
+                                                <textarea class="form-control" name="keterangan" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                                               
                                             </div> 
                                             <div class="mb-3">
                                                 <label for="exampleInputEmail1" class="form-label">Foto</label>
                                                 <input type="file" name="foto"class="form-control"  aria-describedby="emailHelp">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="exampleInputEmail1" class="form-label">Pdf|Word|XLS</label>
+                                                <input type="file" name="pdf"class="form-control"  aria-describedby="emailHelp">
                                             </div>
                                             
                                     </div>
@@ -122,7 +181,9 @@
                                         <th>No</th>
                                         <th  bgcolor='	danger' align='center' width="6px">unikId</th>
                                         <th width="200px" >NoSurat</th>
+                                        <th>Jenis</th>
                                         <th>Cabang</th>
+                                        
                                         <th>St(SL)</th>
                                         <th>JML</th>
                                     
@@ -146,6 +207,8 @@
                                         {{-- <td>{{ $srt->id }}</td> --}}
                                         <td><a href="/surat/{{ $srt->id }}/profile">{{ $srt->id }}</a></td>
                                         <td><a href="/surat/{{ $srt->id }}/profile">{{ $srt->no_surat }}</a></td>
+                                        <td>{{ $srt->status_surat }}</td>
+
                                         <td>{{ $srt->pengirim }}</td>
                                         <td>{{ $srt->label }}</td>
                                         <td>{{ $srt->jumlah }}</td>
@@ -154,7 +217,9 @@
                                         {{-- <td>{{ $srt->jumlah}}</td> --}}
                                         <td>{{ $srt->foto }}<a href="{{ asset('images/'.$srt->foto) }}" alt="">&nbsp; &nbsp;<i class="fa fa-eye"></i></a></td>
                                         {{-- <td>{{ $srt->tanggal }}</td>
+                                       
                                         <td>{{ $srt->keterangan }}</td> --}}
+                                        {{-- <td>{{ $srt->pdf }}</td> --}}
                                         <td>
                                             <a href="/surat/{{ $srt->id }}/editsurat" class="btn-warning btn-xs fa fa-edit"></a>
                                             <a href="/surat/{{ $srt->id }}/hapussurat" class="btn-danger btn-xs fa fa-trash"></a>
@@ -166,6 +231,7 @@
                             </table>
                             
                             {{ $surat->links() }}
+                            {{-- {{ $surat->links() }} --}}
                         </div>
                         @include('sweetalert::alert')
                     </div>

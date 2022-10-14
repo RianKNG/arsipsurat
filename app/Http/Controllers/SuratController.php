@@ -35,14 +35,23 @@ class SuratController extends Controller
     }
     public function create(Request $request)
     {
-       $surat= SuratModel::create($request->all());
-        if($request->hasfile('foto')){
-            $request->file('foto')->move('images',$request->file('foto')->getClientOriginalName());
+        $request->validate([
+            'foto'=> 'image|mimes:jpg,jpeg',
+            'no_surat'=> 'required'
+
+        ]);
+       $surat = SuratModel::create($request->all());
+        if($request->hasFile('foto')){
+            $request->file('foto')->move('images/',$request->file('foto')->getClientOriginalName());
             $surat->foto = $request->file('foto')->getClientOriginalName();
-          
             $surat->save();
         }
-        
+        if($request->hasFile('pdf')){
+            $request->file('pdf')->move('images/',$request->file('pdf')->getClientOriginalName());
+            $surat->pdf = $request->file('pdf')->getClientOriginalName();
+            $surat->save();
+        }
+        // dd($request->foto);
         return redirect('/surat')->with('success', 'Data Berhasil Tersimpan!');
     }
     public function edit($id)
@@ -61,6 +70,13 @@ class SuratController extends Controller
           
             $surat->save();
         }
+        if($request->hasFile('pdf')){
+            $request->file('pdf')->move('images/',$request->file('pdf')->getClientOriginalName());
+            $surat->pdf = $request->file('pdf')->getClientOriginalName();
+            $surat->save();
+        }
+        
+        
 
         return redirect ('/surat')->with('sukses','Data Berhasil Diubah')->with('success', 'Data Berhasil Diupdate!');
     }
