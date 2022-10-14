@@ -18,7 +18,9 @@ use App\Http\Controllers\CabangController;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
-Route::get('/',[ChartController::class,'chart']);
+Route::get('/',[CabangController::class,'lier']);
+Route::get('/bar1',[ChartController::class,'chart']);
+Route::get('/bar',[CabangController::class,'bar']);
 Route::get('/chart',[ChartController::class,'garis']);
 Route::get('/cabang',[CabangController::class,'index']);
 Route::get('/cabang1',[CabangController::class,'persilain']);
