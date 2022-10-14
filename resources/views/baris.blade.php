@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bar Chart in Laravel 8 - Online Web Tutor</title>
+  <title>Line Chart in Laravel 8 - Online Web Tutor</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -11,56 +11,64 @@
 <body>
 
 <div class="container">
-  <h2 style="text-align:center;">Bar Chart in Laravel 8 - Online Web Tutor</h2>
+  <h2 style="text-align: center;">Line Chart in Laravel 8 - Online Web Tutor</h2>
   <div class="panel panel-primary">
-    <div class="panel-heading">Bar Chart in Laravel 8</div>
+    <div class="panel-heading">Line Chart in Laravel 8</div>
     <div class="panel-body">
-        <div id="bar-chart"></div>
+        <div id="line-chart"></div>
     </div>
   </div>
 </div>
 
 <script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/series-label.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 <script src="https://code.highcharts.com/modules/export-data.js"></script>
 <script src="https://code.highcharts.com/modules/accessibility.js"></script>
 
 <script>
-    $(function(){
-        Highcharts.chart('bar-chart', {
-            chart: {
-                type: 'column'
-            },
+  $(function(){
+    Highcharts.chart('line-chart', {
+
+        title: {
+            text: 'Students Term Wise Marks'
+        },
+
+        yAxis: {
             title: {
-                text: 'Student Term Wise Marks'
-            },
-            xAxis: {
-                categories: <?= $kubikasis ?>,
-                crosshair: true
-            },
-            yAxis: {
-                min: 0,
-                title: {
-                    text: 'Marks'
+                text: 'Number of Marks'
+            }
+        },
+
+        xAxis: {
+        categories: <?= $kubs ?>
+    },
+
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle'
+        },
+
+        series: <?= $data ?>,
+
+        responsive: {
+            rules: [{
+                condition: {
+                    maxWidth: 500
+                },
+                chartOptions: {
+                    legend: {
+                        layout: 'horizontal',
+                        align: 'center',
+                        verticalAlign: 'bottom'
+                    }
                 }
-            },
-            tooltip: {
-                headerFormat: '<span style="font-size:10px">{point.key} Marks</span><table>',
-                pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-                    '<td style="padding:0"><b>{point.y}</b></td></tr>',
-                footerFormat: '</table>',
-                shared: true,
-                useHTML: true
-            },
-            plotOptions: {
-                column: {
-                    pointPadding: 0.2,
-                    borderWidth: 0
-                }
-            },
-            series: <?= $data ?>
+            }]
+        }
+
         });
-    });
+  });
 </script>
 
 </body>

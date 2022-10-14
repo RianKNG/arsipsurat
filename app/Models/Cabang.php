@@ -9,7 +9,7 @@ class Cabang extends Model
 {
     // use HasFactory;
 
-    // public $timestamps = false;
-    protected $table ='products';
-    protected $guarded =[];
+    use HasFactory;
+
+    public $timestamps = false;
 }

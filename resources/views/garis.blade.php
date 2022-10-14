@@ -36,7 +36,7 @@
                 text: 'TEST IPANG'
             },
             xAxis: {
-                // categories: <?= $xxx ?>,
+                categories: <?= $xxx ?>,
                 
                 crosshair: true
             },
